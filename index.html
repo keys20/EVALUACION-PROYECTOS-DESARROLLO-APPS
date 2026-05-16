@@ -2,55 +2,43 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sistema Digital de Evaluación</title>
-  <script src="https://cdn.tailwindcss.com">function exportarCSV() {
-  const evaluaciones = JSON.parse(localStorage.getItem('evaluaciones')) || [];
 
-  if(evaluaciones.length === 0) {
-    alert('No hay evaluaciones para exportar');
-    return;
-  }
-
-  let csv = 'Jurado,Grupo,Categoria,Total
-';
-
-  evaluaciones.forEach(e => {
-    csv += `${e.jurado},${e.grupo},${e.categoria},${e.total}
-`;
-  });
-
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const link = document.createElement('a');
-  const url = URL.createObjectURL(blob);
-
-  link.setAttribute('href', url);
-  link.setAttribute('download', 'Resultados_Evaluacion.csv');
-  link.style.visibility = 'hidden';
-
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-</script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-slate-100 min-h-screen text-slate-800">
 
   <div class="max-w-6xl mx-auto p-6">
-    <div class="relative overflow-hidden rounded-3xl shadow-2xl mb-8">
-      <img src="https://raw.githubusercontent.com/keys20/EVALUACION-PROYECTOS-DESARROLLO-APPS/1e4f550d7aadeb9db9813b4bda49d72b5feb13c3/ChatGPT%20Image%2016%20may%202026%2C%2007_18_54%20p.m..png" 
-           alt="Tecnología educativa" 
-           class="w-full h-72 object-cover">
 
-      <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white p-8">
-        
+    <!-- PORTADA -->
+    <div class="relative overflow-hidden rounded-3xl shadow-2xl mb-8 bg-black">
 
-        
+      <img 
+        src="https://raw.githubusercontent.com/keys20/EVALUACION-PROYECTOS-DESARROLLO-APPS/1e4f550d7aadeb9db9813b4bda49d72b5feb13c3/ChatGPT%20Image%2016%20may%202026%2C%2007_18_54%20p.m..png"
+        alt="Tecnología educativa"
+        class="w-full max-h-[500px] object-contain mx-auto"
+      >
+
+      <div class="absolute inset-0 bg-black/30"></div>
+
+      <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-8">
+
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+          Plataforma Inteligente
+        </h1>
+
+        <p class="text-xl md:text-2xl font-medium text-slate-100">
+          Sistema Digital de Evaluación de Proyectos
+        </p>
+
       </div>
     </div>
 
+    <!-- ENCABEZADO -->
     <div class="bg-white rounded-3xl shadow-2xl p-8 mb-8">
+
       <h2 class="text-3xl font-bold text-center text-blue-700 mb-2">
         Plataforma Inteligente de Evaluación de Proyectos
       </h2>
@@ -58,37 +46,63 @@
       <p class="text-center text-slate-500">
         Evaluación digital moderna para jurados académicos
       </p>
+
     </div>
 
+    <!-- CONTENIDO -->
     <div class="grid md:grid-cols-2 gap-6">
 
+      <!-- DATOS -->
       <div class="bg-white rounded-3xl shadow-xl p-6">
-        <h2 class="text-2xl font-bold mb-4 text-blue-600">Datos Generales</h2>
+
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">
+          Datos Generales
+        </h2>
 
         <div class="mb-4">
-          <label class="block font-semibold mb-2">Seleccionar Jurado</label>
+          <label class="block font-semibold mb-2">
+            Seleccionar Jurado
+          </label>
+
           <select id="jurado" class="w-full p-3 border rounded-xl">
             <option value="">Seleccione...</option>
           </select>
         </div>
 
         <div class="mb-4">
-          <label class="block font-semibold mb-2">Grupo Evaluado</label>
+          <label class="block font-semibold mb-2">
+            Grupo Evaluado
+          </label>
+
           <select id="grupo" class="w-full p-3 border rounded-xl">
             <option value="">Seleccione...</option>
           </select>
         </div>
 
         <div class="mb-4">
-          <label class="block font-semibold mb-2">Categoría</label>
-          <input id="categoria" type="text" readonly class="w-full p-3 border rounded-xl bg-slate-100" />
+          <label class="block font-semibold mb-2">
+            Categoría
+          </label>
+
+          <input 
+            id="categoria"
+            type="text"
+            readonly
+            class="w-full p-3 border rounded-xl bg-slate-100"
+          />
         </div>
+
       </div>
 
+      <!-- RESUMEN -->
       <div class="bg-white rounded-3xl shadow-xl p-6">
-        <h2 class="text-2xl font-bold mb-4 text-blue-600">Resumen</h2>
+
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">
+          Resumen
+        </h2>
 
         <div class="space-y-3 text-lg">
+
           <div class="flex justify-between">
             <span>Subtotal:</span>
             <span id="subtotal">0</span>
@@ -98,33 +112,48 @@
             <span>Total:</span>
             <span id="total">0</span>
           </div>
+
         </div>
 
-        <button onclick="guardarEvaluacion()" class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-2xl font-bold text-lg transition">
+        <button
+          onclick="guardarEvaluacion()"
+          class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-2xl font-bold text-lg transition"
+        >
           Guardar Evaluación
         </button>
 
-        <button onclick="exportarCSV()" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white p-4 rounded-2xl font-bold text-lg transition">
+        <button
+          onclick="exportarCSV()"
+          class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white p-4 rounded-2xl font-bold text-lg transition"
+        >
           📥 Exportar Resultados CSV
         </button>
+
       </div>
     </div>
 
+    <!-- EVALUACIÓN -->
     <div class="bg-white rounded-3xl shadow-2xl p-8 mt-8">
+
       <h2 class="text-3xl font-bold text-blue-700 mb-6">
         Evaluación
       </h2>
 
       <div id="criteriosContainer" class="space-y-6"></div>
+
     </div>
 
+    <!-- RESULTADOS -->
     <div class="bg-white rounded-3xl shadow-2xl p-8 mt-8">
+
       <h2 class="text-3xl font-bold text-green-700 mb-6">
         Resultados Guardados
       </h2>
 
       <div class="overflow-auto">
+
         <table class="w-full border-collapse">
+
           <thead>
             <tr class="bg-slate-200">
               <th class="p-3 border">Jurado</th>
@@ -133,126 +162,70 @@
               <th class="p-3 border">Total</th>
             </tr>
           </thead>
+
           <tbody id="tablaResultados"></tbody>
+
         </table>
+
       </div>
+
     </div>
+
   </div>
 
 <script>
+
 const categorias = {
+
   "Frangel Sosa": {
     categoria: "🛠️ Parte Técnica",
     criterios: [
-      "Utiliza nombres descriptivos y significativos para variables y funciones",
-      "Comenta el código de manera clara y concisa",
-      "Estructura el código de manera ordenada y legible",
-      "Omite código redundante o innecesario",
-      "Sigue los estándares de codificación y mejores prácticas",
-      "El proyecto cumple con todos los requisitos funcionales",
-      "El software se ejecuta sin errores",
-      "La solución es eficiente y escalable",
-      "Maneja adecuadamente excepciones y errores"
-    ]
-  },
-
-  "Cándida M. Peguero": {
-    categoria: "🛠️ Parte Técnica",
-    criterios: [
-      "Utiliza nombres descriptivos y significativos para variables y funciones",
-      "Comenta el código de manera clara y concisa",
-      "Estructura el código de manera ordenada y legible",
-      "Omite código redundante o innecesario",
-      "Sigue los estándares de codificación y mejores prácticas",
-      "El proyecto cumple con todos los requisitos funcionales",
-      "El software se ejecuta sin errores",
-      "La solución es eficiente y escalable",
-      "Maneja adecuadamente excepciones y errores"
-    ]
-  },
-
-  "Luis E. Guerrero": {
-    categoria: "🛠️ Parte Técnica",
-    criterios: [
-      "Utiliza nombres descriptivos y significativos para variables y funciones",
-      "Comenta el código de manera clara y concisa",
-      "Estructura el código de manera ordenada y legible",
-      "Omite código redundante o innecesario",
-      "Sigue los estándares de codificación y mejores prácticas",
-      "El proyecto cumple con todos los requisitos funcionales",
-      "El software se ejecuta sin errores",
-      "La solución es eficiente y escalable",
-      "Maneja adecuadamente excepciones y errores"
+      "Utiliza nombres descriptivos y significativos",
+      "Comenta el código correctamente",
+      "Código organizado y legible",
+      "Evita redundancias",
+      "Aplica buenas prácticas",
+      "Cumple requisitos funcionales",
+      "El software funciona correctamente",
+      "La solución es eficiente",
+      "Manejo de errores adecuado"
     ]
   },
 
   "Rosa María Reyes": {
     categoria: "✍️ Ortografía y Expresión",
     criterios: [
-      "Utiliza un lenguaje apropiado",
-      "Toma en cuenta signos de puntuación y reglas ortográficas",
-      "La redacción es clara y coherente",
-      "Se expresa verbalmente con fluidez",
-      "Emplea vocabulario variado y preciso"
-    ]
-  },
-
-  "Josefina Alonzo": {
-    categoria: "✍️ Ortografía y Expresión",
-    criterios: [
-      "Utiliza un lenguaje apropiado",
-      "Toma en cuenta signos de puntuación y reglas ortográficas",
-      "La redacción es clara y coherente",
-      "Se expresa verbalmente con fluidez",
-      "Emplea vocabulario variado y preciso"
+      "Lenguaje apropiado",
+      "Uso correcto de ortografía",
+      "Redacción clara",
+      "Fluidez verbal",
+      "Buen vocabulario"
     ]
   },
 
   "María Castillos": {
     categoria: "💡 Visión de Emprendimiento",
     criterios: [
-      "Presenta una idea original y novedosa",
-      "Demuestra impacto social",
-      "El proyecto es viable",
-      "La propuesta es escalable",
-      "Considera sostenibilidad"
-    ]
-  },
-
-  "José Ángel Morillo": {
-    categoria: "💡 Visión de Emprendimiento",
-    criterios: [
-      "Presenta una idea original y novedosa",
-      "Demuestra impacto social",
-      "El proyecto es viable",
-      "La propuesta es escalable",
-      "Considera sostenibilidad"
+      "Idea innovadora",
+      "Impacto social",
+      "Proyecto viable",
+      "Escalable",
+      "Sostenible"
     ]
   },
 
   "Gregorio Rojas Rosario": {
     categoria: "🚀 Innovación e Impacto",
     criterios: [
-      "Incluye imágenes o videos relevantes",
-      "Utiliza efectos visuales adecuados",
-      "Presenta documentación técnica clara",
-      "Habla clara y audible",
-      "Demuestra dominio del tema",
-      "Introduce elementos innovadores"
-    ]
-  },
-
-  "Juana R. Almonte": {
-    categoria: "🚀 Innovación e Impacto",
-    criterios: [
-      "Incluye imágenes o videos relevantes",
-      "Utiliza efectos visuales adecuados",
-      "Presenta documentación técnica clara",
-      "Habla clara y audible",
-      "Demuestra dominio del tema",
-      "Introduce elementos innovadores"
+      "Buenas imágenes/videos",
+      "Efectos visuales adecuados",
+      "Documentación clara",
+      "Habla clara",
+      "Dominio del tema",
+      "Innovación"
     ]
   }
+
 };
 
 const juradoSelect = document.getElementById('jurado');
@@ -261,14 +234,23 @@ const categoriaInput = document.getElementById('categoria');
 const criteriosContainer = document.getElementById('criteriosContainer');
 
 Object.keys(categorias).forEach(nombre => {
-  juradoSelect.innerHTML += `<option value="${nombre}">${nombre}</option>`;
+  juradoSelect.innerHTML += `
+    <option value="${nombre}">
+      ${nombre}
+    </option>
+  `;
 });
 
-for(let i=1; i<=16; i++) {
-  grupoSelect.innerHTML += `<option value="GP${i}">GP${i}</option>`;
+for(let i = 1; i <= 16; i++) {
+  grupoSelect.innerHTML += `
+    <option value="GP${i}">
+      GP${i}
+    </option>
+  `;
 }
 
 juradoSelect.addEventListener('change', () => {
+
   const jurado = juradoSelect.value;
 
   criteriosContainer.innerHTML = '';
@@ -276,35 +258,60 @@ juradoSelect.addEventListener('change', () => {
   if(!jurado) return;
 
   const info = categorias[jurado];
+
   categoriaInput.value = info.categoria;
 
   info.criterios.forEach((criterio, index) => {
-    criteriosContainer.innerHTML += `
-      <div class="border rounded-2xl p-5 bg-slate-50">
-        <h3 class="font-semibold text-lg mb-4">${criterio}</h3>
 
-        <div class="flex gap-4">
-          <label><input type="radio" name="c${index}" value="0" onchange="calcularTotal()"> 0</label>
-          <label><input type="radio" name="c${index}" value="0.5" onchange="calcularTotal()"> 0.5</label>
-          <label><input type="radio" name="c${index}" value="1" onchange="calcularTotal()"> 1</label>
+    criteriosContainer.innerHTML += `
+
+      <div class="border rounded-2xl p-5 bg-slate-50">
+
+        <h3 class="font-semibold text-lg mb-4">
+          ${criterio}
+        </h3>
+
+        <div class="flex gap-6 text-lg">
+
+          <label class="flex items-center gap-2">
+            <input type="radio" name="c${index}" value="0" onchange="calcularTotal()">
+            0
+          </label>
+
+          <label class="flex items-center gap-2">
+            <input type="radio" name="c${index}" value="0.5" onchange="calcularTotal()">
+            0.5
+          </label>
+
+          <label class="flex items-center gap-2">
+            <input type="radio" name="c${index}" value="1" onchange="calcularTotal()">
+            1
+          </label>
+
         </div>
+
       </div>
+
     `;
   });
+
 });
 
 function calcularTotal() {
+
   let total = 0;
 
-  document.querySelectorAll('input[type="radio"]:checked').forEach(input => {
-    total += parseFloat(input.value);
-  });
+  document.querySelectorAll('input[type="radio"]:checked')
+    .forEach(input => {
+      total += parseFloat(input.value);
+    });
 
   document.getElementById('subtotal').innerText = total;
   document.getElementById('total').innerText = total;
 }
 
 function guardarEvaluacion() {
+
   const jurado = juradoSelect.value;
   const grupo = grupoSelect.value;
   const categoria = categoriaInput.value;
@@ -332,24 +339,73 @@ function guardarEvaluacion() {
 }
 
 function mostrarResultados() {
+
   const tabla = document.getElementById('tablaResultados');
+
   tabla.innerHTML = '';
 
   const evaluaciones = JSON.parse(localStorage.getItem('evaluaciones')) || [];
 
   evaluaciones.forEach(e => {
+
     tabla.innerHTML += `
+
       <tr>
+
         <td class="border p-3">${e.jurado}</td>
+
         <td class="border p-3">${e.grupo}</td>
+
         <td class="border p-3">${e.categoria}</td>
-        <td class="border p-3 font-bold text-green-600">${e.total}</td>
+
+        <td class="border p-3 font-bold text-green-600">
+          ${e.total}
+        </td>
+
       </tr>
+
     `;
   });
 }
 
+function exportarCSV() {
+
+  const evaluaciones = JSON.parse(localStorage.getItem('evaluaciones')) || [];
+
+  if(evaluaciones.length === 0) {
+    alert('No hay evaluaciones para exportar');
+    return;
+  }
+
+  let csv = 'Jurado,Grupo,Categoria,Total\n';
+
+  evaluaciones.forEach(e => {
+    csv += `${e.jurado},${e.grupo},${e.categoria},${e.total}\n`;
+  });
+
+  const blob = new Blob([csv], {
+    type: 'text/csv;charset=utf-8;'
+  });
+
+  const link = document.createElement('a');
+
+  const url = URL.createObjectURL(blob);
+
+  link.setAttribute('href', url);
+
+  link.setAttribute('download', 'Resultados_Evaluacion.csv');
+
+  link.style.visibility = 'hidden';
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  document.body.removeChild(link);
+}
+
 mostrarResultados();
+
 </script>
 
 </body>
