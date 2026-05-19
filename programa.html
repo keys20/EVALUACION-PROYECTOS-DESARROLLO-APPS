@@ -1,15 +1,29 @@
+```html id="r3k9vz"
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Programa de Presentación de Proyectos</title>
+
+  <!-- RESPONSIVE -->
+  <meta 
+    name="viewport" 
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+  />
+
+  <title>
+    Programa de Presentación de Proyectos
+  </title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+
     html{
       scroll-behavior:smooth;
+    }
+
+    body{
+      overflow-x:hidden;
     }
 
     .glass{
@@ -22,15 +36,19 @@
     }
 
     @keyframes fadeIn{
+
       from{
         opacity:0;
         transform:translateY(20px);
       }
+
       to{
         opacity:1;
         transform:translateY(0);
       }
+
     }
+
   </style>
 
 </head>
@@ -40,38 +58,47 @@
   <!-- HERO -->
   <section class="relative overflow-hidden">
 
+    <!-- IMAGEN -->
     <img 
       src="https://raw.githubusercontent.com/keys20/EVALUACION-PROYECTOS-DESARROLLO-APPS/1e4f550d7aadeb9db9813b4bda49d72b5feb13c3/ChatGPT%20Image%2016%20may%202026%2C%2007_18_54%20p.m..png"
-      class="w-full h-[500px] object-cover"
+      class="w-full h-[350px] md:h-[500px] object-cover"
+      alt="Presentación de proyectos"
     >
 
+    <!-- CAPA OSCURA -->
     <div class="absolute inset-0 bg-black/60"></div>
 
-    <div class="absolute inset-0 flex items-center justify-center text-center p-6">
+    <!-- CONTENIDO -->
+    <div class="absolute inset-0 flex items-center justify-center text-center px-4">
 
-      <div class="fade-in">
+      <div class="fade-in max-w-5xl">
 
-        <h1 class="text-5xl md:text-6xl font-black text-white mb-6">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+
           Programa de Presentación
           <br>
           de Proyectos Finales
+
         </h1>
 
-        <p class="text-white text-xl md:text-2xl">
+        <p class="text-white text-lg sm:text-xl md:text-2xl">
+
           Politécnico Presentación Fe y Alegría
+
         </p>
 
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <!-- BADGES -->
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
 
-          <div class="bg-white/20 text-white px-6 py-3 rounded-2xl">
+          <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
             📅 26 de mayo de 2026
           </div>
 
-          <div class="bg-white/20 text-white px-6 py-3 rounded-2xl">
+          <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
             📍 Biblioteca del Centro
           </div>
 
-          <div class="bg-white/20 text-white px-6 py-3 rounded-2xl">
+          <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
             ⏱️ 15 min por proyecto
           </div>
 
@@ -84,24 +111,29 @@
   </section>
 
   <!-- CONTENIDO -->
-  <div class="max-w-7xl mx-auto p-6">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
 
     <!-- BIENVENIDA -->
-    <section class="glass rounded-3xl shadow-2xl p-8 mb-8 mt-[-80px] relative z-10">
+    <section class="glass rounded-3xl shadow-2xl p-5 md:p-8 mb-8 mt-[-50px] md:mt-[-80px] relative z-10">
 
-      <h2 class="text-3xl font-bold text-blue-700 mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-6">
+
         Bienvenida e Inicio de Actividades
+
       </h2>
 
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <div class="bg-slate-50 rounded-2xl p-6">
+        <!-- HORARIO -->
+        <div class="bg-slate-50 rounded-2xl p-5 md:p-6">
 
           <h3 class="font-bold text-xl mb-4 text-slate-700">
+
             Horario General
+
           </h3>
 
-          <ul class="space-y-3">
+          <ul class="space-y-3 text-sm md:text-base">
 
             <li>🕗 08:00 AM - Bienvenida</li>
             <li>🕣 08:20 AM - Inicio de Presentaciones</li>
@@ -111,18 +143,26 @@
 
         </div>
 
-        <div class="bg-slate-50 rounded-2xl p-6">
+        <!-- APERTURA -->
+        <div class="bg-slate-50 rounded-2xl p-5 md:p-6">
 
           <h3 class="font-bold text-xl mb-4 text-slate-700">
+
             Equipo de Apertura
+
           </h3>
 
-          <ul class="space-y-3">
+          <ul class="space-y-3 text-sm md:text-base">
 
             <li>🎤 Presentador: <strong>Osiris</strong></li>
+
             <li>🙏 Oración: <strong>Wildalis</strong></li>
+
             <li>🎶 Himnos: <strong>Ramón Mercedes Mejía</strong></li>
-            <li>👨‍🏫 Coordinador: <strong>Ramón Mercedes Mejía</strong></li>
+
+            <li>👨‍🏫 Coordinador:
+              <strong>Ramón Mercedes Mejía</strong>
+            </li>
 
           </ul>
 
@@ -133,58 +173,88 @@
     </section>
 
     <!-- JURADOS -->
-    <section class="bg-white rounded-3xl shadow-2xl p-8 mb-8 fade-in">
+    <section class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 mb-8 fade-in">
 
-      <h2 class="text-3xl font-bold text-blue-700 mb-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-8">
+
         Jurados Evaluadores
+
       </h2>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
 
+        <!-- CARD -->
         <div class="bg-blue-50 rounded-2xl p-6">
+
           <h3 class="font-bold text-blue-700 mb-3">
+
             💻 Parte Técnica
+
           </h3>
 
-          <ul class="space-y-2">
+          <ul class="space-y-2 text-sm md:text-base">
+
             <li>• Frangel</li>
             <li>• Candy</li>
             <li>• Luis</li>
+
           </ul>
+
         </div>
 
+        <!-- CARD -->
         <div class="bg-green-50 rounded-2xl p-6">
+
           <h3 class="font-bold text-green-700 mb-3">
+
             ✍️ Ortografía y Expresión
+
           </h3>
 
-          <ul class="space-y-2">
+          <ul class="space-y-2 text-sm md:text-base">
+
             <li>• Nely</li>
             <li>• Josefina Alonzo</li>
+
           </ul>
+
         </div>
 
+        <!-- CARD -->
         <div class="bg-yellow-50 rounded-2xl p-6">
+
           <h3 class="font-bold text-yellow-700 mb-3">
+
             💡 Emprendimiento
+
           </h3>
 
-          <ul class="space-y-2">
+          <ul class="space-y-2 text-sm md:text-base">
+
             <li>• Divina</li>
             <li>• Lourdes</li>
+
           </ul>
+
         </div>
 
+        <!-- CARD -->
         <div class="bg-purple-50 rounded-2xl p-6">
+
           <h3 class="font-bold text-purple-700 mb-3">
+
             🚀 Innovación e Impacto
+
           </h3>
 
-          <ul class="space-y-2">
+          <ul class="space-y-2 text-sm md:text-base">
+
             <li>• Gregorio</li>
             <li>• Juana</li>
             <li>• Frangel</li>
+
           </ul>
+
         </div>
 
       </div>
@@ -192,50 +262,67 @@
     </section>
 
     <!-- PROYECTOS -->
-    <section class="bg-white rounded-3xl shadow-2xl p-8 fade-in">
+    <section class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 fade-in">
 
-      <div class="flex items-center justify-between flex-wrap gap-4 mb-8">
+      <!-- ENCABEZADO -->
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
 
-        <h2 class="text-3xl font-bold text-blue-700">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-700">
+
           Agenda de Presentaciones
+
         </h2>
 
+        <!-- BUSCADOR -->
         <input
           type="text"
           id="busqueda"
           placeholder="Buscar proyecto..."
-          class="border p-3 rounded-2xl w-full md:w-80"
+          class="border p-3 rounded-2xl w-full lg:w-80 outline-none focus:ring-2 focus:ring-blue-400"
         >
 
       </div>
 
+      <!-- GRID -->
       <div 
         id="contenedorProyectos"
-        class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
       ></div>
 
     </section>
 
     <!-- CLAUSURA -->
-    <section class="bg-gradient-to-r from-blue-700 to-indigo-700 rounded-3xl shadow-2xl p-10 mt-8 text-white fade-in">
+    <section class="bg-gradient-to-r from-blue-700 to-indigo-700 rounded-3xl shadow-2xl p-6 md:p-10 mt-8 text-white fade-in">
 
-      <h2 class="text-4xl font-bold mb-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+
         Clausura
+
       </h2>
 
-      <div class="grid md:grid-cols-2 gap-6 text-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-base md:text-lg">
 
         <ul class="space-y-4">
 
-          <li>🎤 Palabras de agradecimiento por el coordinador.</li>
-          <li>🗣️ Turno libre.</li>
+          <li>
+            🎤 Palabras de agradecimiento por el coordinador.
+          </li>
+
+          <li>
+            🗣️ Turno libre.
+          </li>
 
         </ul>
 
         <ul class="space-y-4">
 
-          <li>📸 Foto grupal.</li>
-          <li>🥂 Brindis de cierre.</li>
+          <li>
+            📸 Foto grupal.
+          </li>
+
+          <li>
+            🥂 Brindis de cierre.
+          </li>
 
         </ul>
 
@@ -337,40 +424,52 @@ function mostrarProyectos(lista){
 
     contenedor.innerHTML += `
 
-      <div class="bg-slate-50 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-1">
+      <div class="bg-slate-50 rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-1">
 
-        <div class="flex justify-between items-center mb-4">
+        <div class="flex justify-between items-center gap-3 mb-4 flex-wrap">
 
-          <span class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm">
+          <span class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs md:text-sm">
+
             Proyecto ${index + 1}
+
           </span>
 
-          <span class="text-slate-500 text-sm">
-            15 min
+          <span class="text-slate-500 text-xs md:text-sm">
+
+            ⏱️ 15 min
+
           </span>
 
         </div>
 
-        <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-4 break-words">
+
           ${p.nombre}
+
         </h3>
 
-        <p class="text-slate-600 mb-6">
+        <p class="text-slate-600 mb-6 text-sm md:text-base">
+
           👨‍💻 Presentado por:
           <br>
+
           <strong>${p.participantes}</strong>
+
         </p>
 
         <button
-          class="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-2xl font-semibold transition"
+          class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white p-3 rounded-2xl font-semibold transition"
           onclick="mostrarDetalle('${p.nombre}')"
         >
+
           Ver Detalles
+
         </button>
 
       </div>
 
     `;
+
   });
 
 }
@@ -382,7 +481,9 @@ buscador.addEventListener("keyup", () => {
   const texto = buscador.value.toLowerCase();
 
   const filtrados = proyectos.filter(p =>
+
     p.nombre.toLowerCase().includes(texto)
+
   );
 
   mostrarProyectos(filtrados);
@@ -392,8 +493,10 @@ buscador.addEventListener("keyup", () => {
 function mostrarDetalle(nombre){
 
   alert(
+
     "Proyecto seleccionado: " + nombre +
     "\n\nDuración estimada: 15 minutos."
+
   );
 
 }
@@ -402,3 +505,4 @@ function mostrarDetalle(nombre){
 
 </body>
 </html>
+```
