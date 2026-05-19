@@ -104,19 +104,29 @@
 
         </div>
 
+        <!-- BOTÓN GUARDAR -->
         <button
           onclick="guardarEvaluacion()"
           class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-2xl font-bold text-lg transition"
         >
-          Guardar Evaluación
+          💾 Guardar Evaluación
         </button>
 
+        <!-- BOTÓN EXPORTAR -->
         <button
           onclick="exportarCSV()"
           class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white p-4 rounded-2xl font-bold text-lg transition"
         >
           📥 Exportar Resultados CSV
         </button>
+
+        <!-- BOTÓN PROGRAMA -->
+        <a
+          href="programa.html"
+          class="mt-4 block w-full bg-purple-600 hover:bg-purple-700 text-white p-4 rounded-2xl font-bold text-lg transition text-center"
+        >
+          📅 Ver Programa de Actividades
+        </a>
 
       </div>
     </div>
@@ -223,19 +233,23 @@ const categoriaInput = document.getElementById('categoria');
 const criteriosContainer = document.getElementById('criteriosContainer');
 
 Object.keys(categorias).forEach(nombre => {
+
   juradoSelect.innerHTML += `
     <option value="${nombre}">
       ${nombre}
     </option>
   `;
+
 });
 
 for(let i = 1; i <= 16; i++) {
+
   grupoSelect.innerHTML += `
     <option value="GP${i}">
       GP${i}
     </option>
   `;
+
 }
 
 juradoSelect.addEventListener('change', () => {
@@ -260,20 +274,35 @@ juradoSelect.addEventListener('change', () => {
           ${criterio}
         </h3>
 
-        <div class="flex gap-6 text-lg">
+        <div class="flex gap-6 text-lg flex-wrap">
 
           <label class="flex items-center gap-2">
-            <input type="radio" name="c${index}" value="0" onchange="calcularTotal()">
+            <input 
+              type="radio" 
+              name="c${index}" 
+              value="0"
+              onchange="calcularTotal()"
+            >
             0
           </label>
 
           <label class="flex items-center gap-2">
-            <input type="radio" name="c${index}" value="0.5" onchange="calcularTotal()">
+            <input 
+              type="radio" 
+              name="c${index}" 
+              value="0.5"
+              onchange="calcularTotal()"
+            >
             0.5
           </label>
 
           <label class="flex items-center gap-2">
-            <input type="radio" name="c${index}" value="1" onchange="calcularTotal()">
+            <input 
+              type="radio" 
+              name="c${index}" 
+              value="1"
+              onchange="calcularTotal()"
+            >
             1
           </label>
 
@@ -282,6 +311,7 @@ juradoSelect.addEventListener('change', () => {
       </div>
 
     `;
+
   });
 
 });
@@ -290,13 +320,17 @@ function calcularTotal() {
 
   let total = 0;
 
-  document.querySelectorAll('input[type="radio"]:checked')
+  document
+    .querySelectorAll('input[type="radio"]:checked')
     .forEach(input => {
+
       total += parseFloat(input.value);
+
     });
 
   document.getElementById('subtotal').innerText = total;
   document.getElementById('total').innerText = total;
+
 }
 
 function guardarEvaluacion() {
@@ -307,11 +341,15 @@ function guardarEvaluacion() {
   const total = document.getElementById('total').innerText;
 
   if(!jurado || !grupo) {
+
     alert('Complete todos los campos');
     return;
+
   }
 
-  const evaluaciones = JSON.parse(localStorage.getItem('evaluaciones')) || [];
+  const evaluaciones = JSON.parse(
+    localStorage.getItem('evaluaciones')
+  ) || [];
 
   evaluaciones.push({
     jurado,
@@ -320,11 +358,15 @@ function guardarEvaluacion() {
     total
   });
 
-  localStorage.setItem('evaluaciones', JSON.stringify(evaluaciones));
+  localStorage.setItem(
+    'evaluaciones',
+    JSON.stringify(evaluaciones)
+  );
 
   mostrarResultados();
 
-  alert('Evaluación guardada correctamente');
+  alert('✅ Evaluación guardada correctamente');
+
 }
 
 function mostrarResultados() {
@@ -333,7 +375,9 @@ function mostrarResultados() {
 
   tabla.innerHTML = '';
 
-  const evaluaciones = JSON.parse(localStorage.getItem('evaluaciones')) || [];
+  const evaluaciones = JSON.parse(
+    localStorage.getItem('evaluaciones')
+  ) || [];
 
   evaluaciones.forEach(e => {
 
@@ -341,11 +385,17 @@ function mostrarResultados() {
 
       <tr class="hover:bg-slate-100 transition">
 
-        <td class="border p-3">${e.jurado}</td>
+        <td class="border p-3">
+          ${e.jurado}
+        </td>
 
-        <td class="border p-3">${e.grupo}</td>
+        <td class="border p-3">
+          ${e.grupo}
+        </td>
 
-        <td class="border p-3">${e.categoria}</td>
+        <td class="border p-3">
+          ${e.categoria}
+        </td>
 
         <td class="border p-3 font-bold text-green-600">
           ${e.total}
@@ -354,22 +404,35 @@ function mostrarResultados() {
       </tr>
 
     `;
+
   });
+
 }
 
 function exportarCSV() {
 
-  const evaluaciones = JSON.parse(localStorage.getItem('evaluaciones')) || [];
+  const evaluaciones = JSON.parse(
+    localStorage.getItem('evaluaciones')
+  ) || [];
 
   if(evaluaciones.length === 0) {
+
     alert('No hay evaluaciones para exportar');
     return;
+
   }
 
   let csv = 'Jurado,Grupo,Categoria,Total\n';
 
   evaluaciones.forEach(e => {
-    csv += `${e.jurado},${e.grupo},${e.categoria},${e.total}\n`;
+
+    csv += `
+${e.jurado},
+${e.grupo},
+${e.categoria},
+${e.total}
+`;
+
   });
 
   const blob = new Blob([csv], {
@@ -382,7 +445,10 @@ function exportarCSV() {
 
   link.setAttribute('href', url);
 
-  link.setAttribute('download', 'Resultados_Evaluacion.csv');
+  link.setAttribute(
+    'download',
+    'Resultados_Evaluacion.csv'
+  );
 
   link.style.visibility = 'hidden';
 
@@ -391,6 +457,7 @@ function exportarCSV() {
   link.click();
 
   document.body.removeChild(link);
+
 }
 
 mostrarResultados();
