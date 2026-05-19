@@ -23,7 +23,6 @@
 
       <div class="absolute inset-0 bg-black/30"></div>
 
-   
     </div>
 
     <!-- ENCABEZADO -->
@@ -168,17 +167,17 @@
 const categorias = {
 
   "Frangel Sosa": {
-    categoria: "🛠️ Parte Técnica",
+    categoria: "🎨 Diseño, Interfaz y Navegación",
     criterios: [
-      "Utiliza nombres descriptivos y significativos",
-      "Comenta el código correctamente",
-      "Código organizado y legible",
-      "Evita redundancias",
-      "Aplica buenas prácticas",
-      "Cumple requisitos funcionales",
-      "El software funciona correctamente",
-      "La solución es eficiente",
-      "Manejo de errores adecuado"
+      "Mantiene una identidad visual moderna y profesional",
+      "Utiliza una combinación de colores armoniosa y coherente",
+      "Presenta una distribución visual organizada y equilibrada",
+      "La interfaz es intuitiva y fácil de utilizar",
+      "Los elementos visuales mantienen consistencia gráfica",
+      "La tipografía utilizada favorece la legibilidad",
+      "La navegación es clara y estructurada",
+      "El usuario accede fácilmente a las funcionalidades principales",
+      "El flujo de interacción proporciona una experiencia fluida"
     ]
   },
 
@@ -255,9 +254,9 @@ juradoSelect.addEventListener('change', () => {
 
     criteriosContainer.innerHTML += `
 
-      <div class="border rounded-2xl p-5 bg-slate-50">
+      <div class="border rounded-2xl p-5 bg-slate-50 shadow-md">
 
-        <h3 class="font-semibold text-lg mb-4">
+        <h3 class="font-semibold text-lg mb-4 text-slate-700">
           ${criterio}
         </h3>
 
@@ -340,7 +339,7 @@ function mostrarResultados() {
 
     tabla.innerHTML += `
 
-      <tr>
+      <tr class="hover:bg-slate-100 transition">
 
         <td class="border p-3">${e.jurado}</td>
 
