@@ -3,155 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>Sistema de Evaluación de Proyectos Finales</title>
+  <title>Plataforma de Evaluación Multijurado</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-    body { overflow-x: hidden; }
     .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
-    .fade-in { animation: fadeIn 0.6s ease-out; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .fade-in { animation: fadeIn 0.4s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-800 antialiased">
 
-  <section class="relative overflow-hidden bg-slate-900 text-white py-12 px-4 shadow-lg">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-      <div>
-        <span class="bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-          Rúbrica Oficial Interactiva
-        </span>
-        <h1 class="text-3xl md:text-4xl font-black mt-2">Politécnico La Presentación Fe y Alegría</h1>
-        <p class="text-slate-300 text-sm md:text-base mt-1">
-          Desarrollo de Apps y S.I. | Docente: Lic. Ramón Mercedes Mejía
-        </p>
+  <!-- PANTALLA DE LOGUEO / SELECCIÓN DE JURADO -->
+  <div id="pantallaLogin" class="fixed inset-0 bg-slate-900 z-50 flex items-center justify-center p-4">
+    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-2xl max-w-md w-full text-center fade-in">
+      <span class="text-4xl">👨‍🏫</span>
+      <h2 class="text-2xl font-black text-slate-900 mt-2">Politécnico La Presentación Fe y Alegría</h2>
+      <p class="text-slate-500 text-sm mt-1">Sistema de Evaluación - Des. de Apps y S.I.</p>
+      
+      <div class="mt-6 text-left">
+        <label class="block text-sm font-bold text-slate-700 mb-2">Identifíquese como Jurado:</label>
+        <select id="selectJurado" class="w-full border border-slate-300 p-3.5 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50 font-medium">
+          <option value="" disabled selected>-- Seleccione su nombre --</option>
+          <optgroup label="🛠️ Parte Técnica">
+            <option value="Frangel Sosa|tecnica,innovacion">Frangel Sosa</option>
+            <option value="Cándida M. Peguero|tecnica">Cándida M. Peguero</option>
+            <option value="Luis E. Guerrero|tecnica">Luis E. Guerrero</option>
+          </optgroup>
+          <optgroup label="✍️ Ortografía y Expresión">
+            <option value="Rosa María Reyes|ortografia">Rosa María Reyes</option>
+            <option value="Josefina Alonzo|ortografia">Josefina Alonzo</option>
+          </optgroup>
+          <optgroup label="💡 Visión de Emprendimiento">
+            <option value="María Castillos|emprendimiento">María Castillos</option>
+            <option value="José Ángel Morillo|emprendimiento">José Ángel Morillo</option>
+          </optgroup>
+          <optgroup label="🚀 Innovación e Impacto">
+            <option value="Gregorio Rojas Rosario|innovacion">Gregorio Rojas Rosario</option>
+            <option value="Juana R. Almonte|innovacion">Juana R. Almonte</option>
+          </optgroup>
+        </select>
       </div>
-      <div class="bg-white/10 p-4 rounded-2xl border border-white/10">
-        <div class="text-sm text-slate-300">Puntaje Máximo Global</div>
-        <div class="text-3xl font-black text-blue-400">25 Puntos</div>
-      </div>
-    </div>
-  </section>
 
-  <main class="max-w-7xl mx-auto px-4 md:px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <button onclick="ingresarComoJurado()" class="w-full bg-blue-600 hover:bg-blue-700 text-white p-3.5 rounded-xl font-bold mt-6 transition active:scale-95 shadow-lg">
+        Ingresar al Panel de Evaluación
+      </button>
+    </div>
+  </div>
+
+  <!-- INTERFAZ PRINCIPAL DEL SISTEMA -->
+  <div id="interfazPrincipal" class="hidden">
     
-    <div class="lg:col-span-1 space-y-6">
-      <div class="bg-white p-6 rounded-3xl shadow-xl border border-slate-200 sticky top-6">
-        <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-          <span>👥</span> Seleccionar Grupo
-        </h2>
-        
-        <div class="mb-4">
-          <input
-            type="text"
-            id="busqueda"
-            placeholder="Buscar por nombre o GP..."
-            class="w-full border border-slate-300 p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition"
-          >
+    <!-- CABECERA DE USUARIO ACTIVADO -->
+    <header class="bg-slate-950 text-white py-4 px-4 md:px-8 border-b border-slate-800 shadow-md">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="text-center sm:text-left">
+          <div class="text-xs text-blue-400 font-bold tracking-wider uppercase">Sesión Activa</div>
+          <div id="nombreJuradoActivo" class="text-lg font-black"></div>
         </div>
-
-        <div id="listaGrupos" class="space-y-2 max-h-[450px] overflow-y-auto pr-2">
-          </div>
-      </div>
-    </div>
-
-    <div class="lg:col-span-2">
-      <div id="panelEvaluacion" class="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-200 hidden fade-in">
-        
-        <div class="border-b border-slate-200 pb-6 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <span id="evalGrupoBadge" class="bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-xl text-sm"></span>
-            <h2 id="evalProyectoNombre" class="text-2xl md:text-3xl font-black text-slate-900 mt-2"></h2>
-            <p id="evalIntegrantes" class="text-slate-500 mt-1 text-sm md:text-base"></p>
-          </div>
-          <div class="bg-slate-900 text-white p-4 rounded-2xl text-center min-w-[110px] self-start sm:self-center">
-            <span class="text-xs uppercase text-slate-400 block tracking-wider">Nota Actual</span>
-            <span id="notaFinalGlobal" class="text-3xl font-black text-green-400">0</span>
-            <span class="text-slate-400 text-sm font-bold">/25</span>
-          </div>
-        </div>
-
-        <div class="space-y-8">
-          
-          <div class="bg-blue-50/50 rounded-2xl p-5 border border-blue-100">
-            <div class="flex justify-between items-center mb-4 border-b border-blue-200 pb-2">
-              <div>
-                <h3 class="font-bold text-blue-800 text-lg">🛠️ Parte Técnica</h3>
-                <p class="text-xs text-slate-500">Jurados: Frangel Sosa, Cándida M. Peguero, Luis E. Guerrero</p>
-              </div>
-              <span class="bg-blue-600 text-white font-bold px-3 py-1 rounded-xl text-sm">
-                Subtotal: <span id="subTecnica">0</span>/9
-              </span>
-            </div>
-            <div class="space-y-3" id="contenedorTecnica"></div>
-          </div>
-
-          <div class="bg-green-50/50 rounded-2xl p-5 border border-green-100">
-            <div class="flex justify-between items-center mb-4 border-b border-green-200 pb-2">
-              <div>
-                <h3 class="font-bold text-green-800 text-lg">✍️ Ortografía y Expresión</h3>
-                <p class="text-xs text-slate-500">Jurados: Rosa María Reyes, Josefina Alonzo</p>
-              </div>
-              <span class="bg-green-600 text-white font-bold px-3 py-1 rounded-xl text-sm">
-                Subtotal: <span id="subOrtografia">0</span>/5
-              </span>
-            </div>
-            <div class="space-y-3" id="contenedorOrtografia"></div>
-          </div>
-
-          <div class="bg-yellow-50/50 rounded-2xl p-5 border border-yellow-100">
-            <div class="flex justify-between items-center mb-4 border-b border-yellow-200 pb-2">
-              <div>
-                <h3 class="font-bold text-yellow-800 text-lg">💡 Visión de Emprendimiento</h3>
-                <p class="text-xs text-slate-500">Jurados: María Castillos, José Ángel Morillo</p>
-              </div>
-              <span class="bg-yellow-600 text-white font-bold px-3 py-1 rounded-xl text-sm">
-                Subtotal: <span id="subEmprendimiento">0</span>/5
-              </span>
-            </div>
-            <div class="space-y-3" id="contenedorEmprendimiento"></div>
-          </div>
-
-          <div class="bg-purple-50/50 rounded-2xl p-5 border border-purple-100">
-            <div class="flex justify-between items-center mb-4 border-b border-purple-200 pb-2">
-              <div>
-                <h3 class="font-bold text-purple-800 text-lg">🚀 Innovación e Impacto</h3>
-                <p class="text-xs text-slate-500">Jurados: Gregorio Rojas Rosario, Juana R. Almonte</p>
-              </div>
-              <span class="bg-purple-600 text-white font-bold px-3 py-1 rounded-xl text-sm">
-                Subtotal: <span id="subInnovacion">0</span>/6
-              </span>
-            </div>
-            <div class="space-y-3" id="contenedorInnovacion"></div>
-          </div>
-
-        </div>
-
-        <div class="mt-8 pt-6 border-t border-slate-200 flex flex-wrap gap-4">
-          <button 
-            onclick="generarReporteAlerta()"
-            class="flex-1 bg-slate-900 hover:bg-slate-800 text-white p-4 rounded-xl font-bold transition text-center shadow-lg active:scale-95"
-          >
-            📋 Guardar y Mostrar Reporte Consolidado
+        <div class="flex items-center gap-3 w-full sm:w-auto justify-center">
+          <button onclick="exportarCalificacionesExcel()" class="bg-emerald-600 hover:bg-emerald-700 font-bold px-4 py-2 rounded-xl text-sm transition text-white shadow">
+            📥 Exportar a Excel (.CSV)
+          </button>
+          <button onclick="cerrarSesion()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold px-3 py-2 rounded-xl text-sm transition">
+            Cambiar Jurado
           </button>
         </div>
+      </div>
+    </header>
 
+    <!-- CUERPO DE LA APP -->
+    <main class="max-w-7xl mx-auto px-4 md:px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- COLUMNA LISTADO DE GRUPOS -->
+      <div class="lg:col-span-1">
+        <div class="bg-white p-5 rounded-3xl shadow-xl border border-slate-200 sticky top-6">
+          <h2 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+            <span>📋</span> Proyectos Finales
+          </h2>
+          <input type="text" id="busqueda" placeholder="Buscar grupo o proyecto..." class="w-full border border-slate-300 p-2.5 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 mb-4 text-sm" />
+          
+          <div id="listaGrupos" class="space-y-2 max-h-[480px] overflow-y-auto pr-1"></div>
+        </div>
       </div>
 
-      <div id="estadoVacio" class="bg-slate-50 border-2 border-dashed border-slate-300 rounded-3xl p-12 text-center text-slate-500">
-        <div class="text-5xl mb-4">📊</div>
-        <p class="text-xl font-bold text-slate-700">Ningún grupo seleccionado para evaluar</p>
-        <p class="text-sm mt-1">Selecciona un proyecto de la lista de la izquierda para desplegar la rúbrica interactiva.</p>
-      </div>
+      <!-- COLUMNA DINÁMICA DE EVALUACIÓN SEGÚN EL ROL -->
+      <div class="lg:col-span-2">
+        
+        <!-- FORMULARIO DE CALIFICACIÓN -->
+        <div id="panelEvaluacion" class="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-200 hidden fade-in">
+          
+          <div class="border-b border-slate-200 pb-4 mb-6 flex justify-between items-start gap-4">
+            <div>
+              <span id="evalGrupoBadge" class="bg-blue-100 text-blue-800 font-bold px-2.5 py-1 rounded-lg text-xs"></span>
+              <h2 id="evalProyectoNombre" class="text-2xl font-black text-slate-900 mt-1"></h2>
+              <p id="evalIntegrantes" class="text-slate-500 text-sm mt-0.5"></p>
+            </div>
+            <div class="bg-slate-900 text-white p-3 rounded-xl text-center min-w-[90px] shrink-0">
+              <span class="text-[10px] uppercase text-slate-400 block font-bold">Total Grupo</span>
+              <span id="notaFinalGlobal" class="text-2xl font-black text-green-400">0</span><span class="text-xs text-slate-400">/25</span>
+            </div>
+          </div>
 
-    </div>
-  </main>
+          <!-- BLOQUES FILTRADOS AUTOMÁTICAMENTE -->
+          <div class="space-y-6">
+            <!-- 🛠️ PARTE TÉCNICA -->
+            <div id="bloque_tecnica" class="hidden bg-blue-50/60 rounded-2xl p-5 border border-blue-100">
+              <div class="flex justify-between items-center mb-3 border-b border-blue-200 pb-2">
+                <h3 class="font-bold text-blue-800">🛠️ Evaluación: Parte Técnica</h3>
+                <span class="bg-blue-600 text-white font-bold px-2.5 py-0.5 rounded-lg text-xs">Subtotal: <span id="subTecnica">0</span>/9</span>
+              </div>
+              <div class="space-y-2.5" id="contenedorTecnica"></div>
+            </div>
+
+            <!-- ✍️ ORTOGRAFÍA Y EXPRESIÓN -->
+            <div id="bloque_ortografia" class="hidden bg-green-50/60 rounded-2xl p-5 border border-green-100">
+              <div class="flex justify-between items-center mb-3 border-b border-green-200 pb-2">
+                <h3 class="font-bold text-green-800">✍️ Evaluación: Ortografía y Expresión</h3>
+                <span class="bg-green-600 text-white font-bold px-2.5 py-0.5 rounded-lg text-xs">Subtotal: <span id="subOrtografia">0</span>/5</span>
+              </div>
+              <div class="space-y-2.5" id="contenedorOrtografia"></div>
+            </div>
+
+            <!-- 💡 VISIÓN DE EMPRENDIMIENTO -->
+            <div id="bloque_emprendimiento" class="hidden bg-yellow-50/60 rounded-2xl p-5 border border-yellow-100">
+              <div class="flex justify-between items-center mb-3 border-b border-yellow-200 pb-2">
+                <h3 class="font-bold text-yellow-800">💡 Evaluación: Visión de Emprendimiento</h3>
+                <span class="bg-yellow-600 text-white font-bold px-2.5 py-0.5 rounded-lg text-xs">Subtotal: <span id="subEmprendimiento">0</span>/5</span>
+              </div>
+              <div class="space-y-2.5" id="contenedorEmprendimiento"></div>
+            </div>
+
+            <!-- 🚀 INNOVACIÓN E IMPACTO -->
+            <div id="bloque_innovacion" class="hidden bg-purple-50/60 rounded-2xl p-5 border border-purple-100">
+              <div class="flex justify-between items-center mb-3 border-b border-purple-200 pb-2">
+                <h3 class="font-bold text-purple-800">🚀 Evaluación: Innovación e Impacto</h3>
+                <span class="bg-purple-600 text-white font-bold px-2.5 py-0.5 rounded-lg text-xs">Subtotal: <span id="subInnovacion">0</span>/6</span>
+              </div>
+              <div class="space-y-2.5" id="contenedorInnovacion"></div>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-400 mt-6 italic text-center">Las calificaciones se guardan instantáneamente de forma local.</p>
+        </div>
+
+        <!-- ESTADO VACÍO -->
+        <div id="estadoVacio" class="bg-slate-50 border-2 border-dashed border-slate-300 rounded-3xl p-12 text-center text-slate-400">
+          <div class="text-4xl mb-2">📊</div>
+          <p class="text-md font-bold text-slate-600">Por favor, seleccione un proyecto de la lista izquierda para calificar su área.</p>
+        </div>
+
+      </div>
+    </main>
+  </div>
 
 <script>
-// Base de datos fija de los 16 Grupos oficiales
+// Base de datos oficial unificada con los 16 grupos (Incluyendo Power Piston)
 const proyectos = [
   { id: 0, nombre: "CARLOTAS Y POSTRES", participantes: "MILDRED Y CRISMEIDY", prefijo: "GP1" },
   { id: 1, nombre: "GALLO PLUS", participantes: "ANGEL MANUEL Y BRAILIN", prefijo: "GP2" },
@@ -159,7 +166,7 @@ const proyectos = [
   { id: 3, nombre: "MUSICBOX", participantes: "RAYBELIS Y SUJEIDI", prefijo: "GP4" },
   { id: 4, nombre: "MARAND CAR", participantes: "MARIEL Y ANDRES", prefijo: "GP5" },
   { id: 5, nombre: "NAILS YAILIN", participantes: "MARIA DEL CARMEN", prefijo: "GP6" },
-  { id: 6, font: "bold", nombre: "KEYSNOTE", participantes: "WILDALYS", prefijo: "GP7" },
+  { id: 6, nombre: "KEYSNOTE", participantes: "WILDALYS", prefijo: "GP7" },
   { id: 7, nombre: "SALES", participantes: "SAID GABRIEL Y LUIS ALFREDO", prefijo: "GP8" },
   { id: 8, nombre: "DIAZ CONSTRUCTION GROUP", participantes: "JANNA CARLENE", prefijo: "GP9" },
   { id: 9, nombre: "LYNSPORT", participantes: "WALI Y DERLIN ALFREDO", prefijo: "GP10" },
@@ -171,7 +178,6 @@ const proyectos = [
   { id: 15, nombre: "POWER PISTON", participantes: "JUAN EMILIO Y JULIO ALBERTO", prefijo: "GP16" }
 ];
 
-// Configuración de Criterios Oficiales de la Rúbrica
 const estructuraRubrica = {
   tecnica: [
     { id: "t1", desc: "Utiliza nombres descriptivos y significativos para variables y funciones" },
@@ -200,55 +206,94 @@ const estructuraRubrica = {
   ],
   innovacion: [
     { id: "i1", desc: "Recurso multimedia: Incluye imágenes o videos relevantes al proyecto" },
-    { id: "i2", desc: "Utiliza efectos visuales adecuados en la interfaz / presentación" },
+    { id: "i2", desc: "Utiliza efectos visuales adecuados en la interfaz" },
     { id: "i3", desc: "Presentación oral: Presenta documentación técnica y de usuario clara" },
-    { id: "i4", desc: "Habla de manera clara y audible durante la defensa" },
-    { id: "i5", desc: "Participación e impacto: Engancha al público, demuestra dominio y responde dudas" },
-    { id: "i6", desc: "Innovación técnica: Introduce elementos innovadores en su solución tecnológica" }
+    { id: "i4", desc: "Habla de manera clara y audible" },
+    { id: "i5", desc: "Participación e impacto: Engancha al público, domina el tema y responde dudas" },
+    { id: "i6", desc: "Innovación técnica: Introduce elementos innovadores tecnológicos" }
   ]
 };
 
-// Matriz global indexada para almacenar las calificaciones en tiempo real de cada grupo
 let evaluacionesCacheadas = {};
+let juradoActivo = "";
+let permisosActivos = []; // Bloques autorizados
 let grupoSeleccionadoId = null;
 
-// Inicializador del Caché limpio
-proyectos.forEach(p => {
-  evaluacionesCacheadas[p.id] = {
+// Inicializar el sistema cargando desde LocalStorage si ya existen datos previos
+function inicializarDatosYAlmacenamiento() {
+  const guardado = localStorage.getItem("EVALUACIONES_PRESENTACION");
+  if (guardado) {
+    evaluacionesCacheadas = JSON.parse(guardado);
+    // Asegurar compatibilidad por si se añaden grupos nuevos al array estructural
+    proyectos.forEach(p => {
+      if(!evaluacionesCacheadas[p.id]) crearEstructuraVaciaGrupo(p.id);
+    });
+  } else {
+    proyectos.forEach(p => crearEstructuraVaciaGrupo(p.id));
+    guardarEnLocalStorage();
+  }
+}
+
+function crearEstructuraVaciaGrupo(id) {
+  evaluacionesCacheadas[id] = {
     tecnica: { t1:0, t2:0, t3:0, t4:0, t5:0, t6:0, t7:0, t8:0, t9:0 },
     ortografia: { o1:0, o2:0, o3:0, o4:0, o5:0 },
     emprendimiento: { e1:0, e2:0, e3:0, e4:0, e5:0 },
     innovacion: { i1:0, i2:0, i3:0, i4:0, i5:0, i6:0 }
   };
-});
+}
 
-// Elementos DOM Básicos
-const listaGruposContainer = document.getElementById("listaGrupos");
-const buscadorInput = document.getElementById("busqueda");
-const panelEvaluacion = document.getElementById("panelEvaluacion");
-const estadoVacio = document.getElementById("estadoVacio");
+function guardarEnLocalStorage() {
+  localStorage.setItem("EVALUACIONES_PRESENTACION", JSON.stringify(evaluacionesCacheadas));
+}
 
+// Control de Sesión / Roles del Jurado
+function ingresarComoJurado() {
+  const select = document.getElementById("selectJurado");
+  if (!select.value) {
+    alert("Por favor, elija un jurado válido del listado para continuar.");
+    return;
+  }
+  
+  const [nombre, permisos] = select.value.split("|");
+  juradoActivo = nombre;
+  permisosActivos = permisos.split(",");
+
+  document.getElementById("nombreJuradoActivo").innerText = `👤 Jurado: ${juradoActivo}`;
+  document.getElementById("pantallaLogin").classList.add("hidden");
+  document.getElementById("interfazPrincipal").classList.remove("hidden");
+
+  renderizarListaGrupos(proyectos);
+}
+
+function cerrarSesion() {
+  grupoSeleccionadoId = null;
+  document.getElementById("interfazPrincipal").classList.add("hidden");
+  document.getElementById("pantallaLogin").classList.remove("hidden");
+  document.getElementById("panelEvaluacion").classList.add("hidden");
+  document.getElementById("estadoVacio").classList.remove("hidden");
+  document.getElementById("selectJurado").value = "";
+}
+
+// Render del listado interactivo lateral
 function renderizarListaGrupos(lista) {
-  listaGruposContainer.innerHTML = "";
+  const container = document.getElementById("listaGrupos");
+  container.innerHTML = "";
+  
   lista.forEach(p => {
     const isSelected = grupoSeleccionadoId === p.id;
-    const totalGrupo = calcularTotalProyecto(p.id);
+    const totalScore = calcularTotalProyecto(p.id);
     
-    listaGruposContainer.innerHTML += `
-      <button 
-        onclick="seleccionarGrupo(${p.id})"
-        class="w-full text-left p-3.5 rounded-xl border transition flex items-center justify-between gap-2 ${
-          isSelected 
-            ? 'bg-blue-600 text-white border-blue-600 font-bold shadow-md' 
-            : 'bg-slate-50 hover:bg-slate-200 border-slate-200 text-slate-700'
-        }"
-      >
+    container.innerHTML += `
+      <button onclick="seleccionarGrupo(${p.id})" class="w-full text-left p-3 rounded-xl border transition flex items-center justify-between gap-2 ${
+        isSelected ? 'bg-blue-600 text-white border-blue-600 font-bold shadow' : 'bg-slate-50 hover:bg-slate-200 border-slate-200'
+      }">
         <div class="truncate">
-          <span class="inline-block text-xs uppercase px-1.5 py-0.5 rounded ${isSelected ? 'bg-white/20 text-white' : 'bg-slate-300 text-slate-800'} font-bold mr-1.5">${p.prefijo}</span>
-          <strong class="text-sm block sm:inline">${p.nombre}</strong>
+          <span class="inline-block text-[10px] px-1.5 py-0.5 rounded font-black mr-1 ${isSelected ? 'bg-white/20 text-white' : 'bg-slate-300 text-slate-800'}">${p.prefijo}</span>
+          <span class="text-xs font-bold block sm:inline">${p.nombre}</span>
         </div>
-        <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-md ${isSelected ? 'bg-blue-900/40 text-blue-200' : 'bg-slate-200 text-slate-800'} ml-auto shrink-0">
-          ${totalGrupo} pts
+        <span class="text-[11px] font-bold px-1.5 py-0.5 rounded shrink-0 ${isSelected ? 'bg-blue-900/50 text-blue-100' : 'bg-slate-200 text-slate-700'}">
+          ${totalScore} pts
         </span>
       </button>
     `;
@@ -259,74 +304,59 @@ function seleccionarGrupo(id) {
   grupoSeleccionadoId = id;
   const p = proyectos.find(item => item.id === id);
   
-  // Actualizar UI de listas
-  const textoFiltro = buscadorInput.value.toLowerCase();
-  const filtrados = proyectos.filter(item => item.nombre.toLowerCase().includes(textoFiltro) || item.prefijo.toLowerCase().includes(textoFiltro));
+  // Refrescar lista visual
+  const texto = document.getElementById("busqueda").value.toLowerCase();
+  const filtrados = proyectos.filter(item => item.nombre.toLowerCase().includes(texto) || item.prefijo.toLowerCase().includes(texto));
   renderizarListaGrupos(filtrados);
 
-  // Mostrar Paneles
-  estadoVacio.classList.add("hidden");
-  panelEvaluacion.classList.remove("hidden");
+  // Paneles de Visibilidad
+  document.getElementById("estadoVacio").classList.add("hidden");
+  document.getElementById("panelEvaluacion").classList.remove("hidden");
 
-  // Inyectar Metadatos del encabezado
+  // Metadatos
   document.getElementById("evalGrupoBadge").innerText = p.prefijo;
   document.getElementById("evalProyectoNombre").innerText = p.nombre;
-  document.getElementById("evalIntegrantes").innerText = `👨‍💻 Desarrolladores: ${p.participantes}`;
+  document.getElementById("evalIntegrantes").innerText = `👨‍💻 Integrantes: ${p.participantes}`;
 
-  // Renderizar las filas de controles iterativamente
-  construirSeccionCriterios("tecnica", "contenedorTecnica");
-  construirSeccionCriterios("ortografia", "contenedorOrtografia");
-  construirSeccionCriterios("emprendimiento", "contenedorEmprendimiento");
-  construirSeccionCriterios("innovacion", "contenedorInnovacion");
+  // Resetear la vista de los bloques y renderizar solo si tiene permisos
+  ["tecnica", "ortografia", "emprendimiento", "innovacion"].forEach(bloque => {
+    const elBloque = document.getElementById(`bloque_${bloque}`);
+    if (permisosActivos.includes(bloque)) {
+      elBloque.classList.remove("hidden");
+      construirFilasCriterios(bloque, `contenedor${bloque.charAt(0).toUpperCase() + bloque.slice(1)}`);
+    } else {
+      elBloque.classList.add("hidden");
+    }
+  });
 
   actualizarTotalesUI();
 }
 
-function construirSeccionCriterios(bloqueKey, contenedorId) {
+function construirFilasCriterios(bloqueKey, contenedorId) {
   const container = document.getElementById(contenedorId);
   container.innerHTML = "";
-  
+
   estructuraRubrica[bloqueKey].forEach(crit => {
-    const valorActual = evaluacionesCacheadas[grupoSeleccionadoId][bloqueKey][crit.id];
+    const valor = evaluacionesCacheadas[grupoSeleccionadoId][bloqueKey][crit.id];
     
     container.innerHTML += `
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-3 rounded-xl border border-slate-200/60 shadow-sm">
-        <p class="text-sm text-slate-700 leading-snug max-w-xl">${crit.desc}</p>
-        
-        <div class="flex items-center gap-2 self-end sm:self-center">
-          <button 
-            onclick="cambiarPunto('${bloqueKey}', '${crit.id}', 0)"
-            class="px-2.5 py-1 rounded-lg font-bold text-xs transition border ${
-              valorActual === 0 
-                ? 'bg-red-500 text-white border-red-500' 
-                : 'bg-slate-100 text-slate-400 border-slate-200 hover:bg-slate-200'
-            }"
-          >
-            0 Ptos
-          </button>
-          <button 
-            onclick="cambiarPunto('${bloqueKey}', '${crit.id}', 1)"
-            class="px-2.5 py-1 rounded-lg font-bold text-xs transition border ${
-              valorActual === 1 
-                ? 'bg-green-500 text-white border-green-500' 
-                : 'bg-slate-100 text-slate-400 border-slate-200 hover:bg-slate-200'
-            }"
-          >
-            1 Pto
-          </button>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm text-xs">
+        <p class="text-slate-700 font-medium max-w-lg">${crit.desc}</p>
+        <div class="flex items-center gap-1 self-end sm:self-center">
+          <button onclick="cambiarNota('${bloqueKey}', '${crit.id}', 0)" class="px-2 py-0.5 rounded-md font-bold transition border ${valor === 0 ? 'bg-red-500 text-white border-red-500':'bg-slate-100 text-slate-400 border-slate-200'}">0 Ptos</button>
+          <button onclick="cambiarNota('${bloqueKey}', '${crit.id}', 1)" class="px-2 py-0.5 rounded-md font-bold transition border ${valor === 1 ? 'bg-green-500 text-white border-green-500':'bg-slate-100 text-slate-400 border-slate-200'}">1 Pto</button>
         </div>
       </div>
     `;
   });
 }
 
-function cambiarPunto(bloqueKey, critId, nuevoValor) {
-  if(grupoSeleccionadoId === null) return;
-  
-  // Guardar en el estado interno
+function cambiarNota(bloqueKey, critId, nuevoValor) {
+  if (grupoSeleccionadoId === null) return;
   evaluacionesCacheadas[grupoSeleccionadoId][bloqueKey][critId] = nuevoValor;
+  guardarEnLocalStorage();
   
-  // Refrescar componentes vinculados
+  // Refrescar cálculos y UI
   seleccionarGrupo(grupoSeleccionadoId);
 }
 
@@ -346,70 +376,57 @@ function calcularTotalProyecto(grupoId) {
 }
 
 function actualizarTotalesUI() {
-  if(grupoSeleccionadoId === null) return;
+  if (grupoSeleccionadoId === null) return;
 
   const t = calcularSubtotalBloque(grupoSeleccionadoId, "tecnica");
   const o = calcularSubtotalBloque(grupoSeleccionadoId, "ortografia");
   const e = calcularSubtotalBloque(grupoSeleccionadoId, "emprendimiento");
   const i = calcularSubtotalBloque(grupoSeleccionadoId, "innovacion");
-  const global = t + o + e + i;
-
+  
   document.getElementById("subTecnica").innerText = t;
   document.getElementById("subOrtografia").innerText = o;
   document.getElementById("subEmprendimiento").innerText = e;
   document.getElementById("subInnovacion").innerText = i;
-  
-  const notaGlobalContainer = document.getElementById("notaFinalGlobal");
-  notaGlobalContainer.innerText = global;
 
-  // Feedback de color dinámico en base a la nota acumulada
-  if(global >= 22) { notaGlobalContainer.className = "text-3xl font-black text-green-500"; }
-  else if(global >= 17) { notaGlobalContainer.className = "text-3xl font-black text-yellow-500"; }
-  else { notaGlobalContainer.className = "text-3xl font-black text-red-500"; }
+  document.getElementById("notaFinalGlobal").innerText = (t + o + e + i);
 }
 
-function generarReporteAlerta() {
-  if(grupoSeleccionadoId === null) return;
-  
-  const p = proyectos.find(item => item.id === grupoSeleccionadoId);
-  const t = calcularSubtotalBloque(grupoSeleccionadoId, "tecnica");
-  const o = calcularSubtotalBloque(grupoSeleccionadoId, "ortografia");
-  const e = calcularSubtotalBloque(grupoSeleccionadoId, "emprendimiento");
-  const i = calcularSubtotalBloque(grupoSeleccionadoId, "innovacion");
-  const global = t + o + e + i;
+// LÓGICA DE EXPORTACIÓN A EXCEL EN FORMATO COMPATIBLE .CSV (Soporta acentos)
+function exportarCalificacionesExcel() {
+  let contenidoCsv = "\uFEFF"; // BOM para forzar compatibilidad UTF-8 en Excel con caracteres en español
+  contenidoCsv += "Grupo;Proyecto;Integrantes;Parte Tecnica (/9);Ortografia y Expresion (/5);Vision Emprendimiento (/5);Innovacion e Impacto (/6);NOTA FINAL (/25)\n";
 
-  alert(
-    `✅ EVALUACIÓN GUARDADA CON ÉXITO\n` +
-    `----------------------------------------------------------------------\n` +
-    `🏫 Politécnico La Presentación Fe y Alegría\n` +
-    `📋 Reporte Consolidado de Calificación Final\n` +
-    `----------------------------------------------------------------------\n` +
-    `📌 Grupo: ${p.prefijo} - ${p.nombre}\n` +
-    `👨‍💻 Integrantes: ${p.participantes}\n` +
-    `----------------------------------------------------------------------\n\n` +
-    `📊 DESGLOSE DE CALIFICACIÓN POR ÁREA:\n\n` +
-    `🛠️ Parte Técnica: ${t} / 9 Ptos\n` +
-    `✍️ Ortografía y Expresión: ${o} / 5 Ptos\n` +
-    `💡 Visión de Emprendimiento: ${e} / 5 Ptos\n` +
-    `🚀 Innovación e Impacto: ${i} / 6 Ptos\n\n` +
-    `----------------------------------------------------------------------\n` +
-    `🎯 NOTA FINAL DEFINITIVA: ${global} / 25 PUNTOS`
-  );
+  proyectos.forEach(p => {
+    const t = calcularSubtotalBloque(p.id, "tecnica");
+    const o = calcularSubtotalBloque(p.id, "ortografia");
+    const e = calcularSubtotalBloque(p.id, "emprendimiento");
+    const i = calcularSubtotalBloque(p.id, "innovacion");
+    const total = t + o + e + i;
+
+    contenidoCsv += `${p.prefijo};${p.nombre};${p.participantes};${t};${o};${e};${i};${total}\n`;
+  });
+
+  const blob = new Blob([contenidoCsv], { type: "text/csv;charset=utf-8;" });
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(blob);
+  
+  link.setAttribute("href", url);
+  link.setAttribute("download", `Calificaciones_Rubrica_Proyectos_Finales.csv`);
+  link.style.visibility = "hidden";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
-// Configuración de Buscador en Tiempo Real
-buscadorInput.addEventListener("keyup", () => {
-  const texto = buscadorInput.value.toLowerCase();
-  const filtrados = proyectos.filter(p => 
-    p.nombre.toLowerCase().includes(texto) || 
-    p.prefijo.toLowerCase().includes(texto)
-  );
+// Configuración del Buscador en tiempo real
+document.getElementById("busqueda").addEventListener("keyup", () => {
+  const texto = document.getElementById("busqueda").value.toLowerCase();
+  const filtrados = proyectos.filter(p => p.nombre.toLowerCase().includes(texto) || p.prefijo.toLowerCase().includes(texto));
   renderizarListaGrupos(filtrados);
 });
 
-// Render Inicial
-renderizarListaGrupos(proyectos);
+// Inicialización de la aplicación
+inicializarDatosYAlmacenamiento();
 </script>
-
 </body>
 </html>
