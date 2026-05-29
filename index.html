@@ -3,250 +3,412 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>Rúbrica de Evaluación de Proyectos Finales</title>
+  <title>Sistema de Evaluación de Proyectos Finales</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
     body { overflow-x: hidden; }
-    .glass { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(12px); }
-    .fade-in { animation: fadeIn 1s ease; }
+    .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
+    .fade-in { animation: fadeIn 0.6s ease-out; }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-<body class="bg-slate-100 text-slate-800">
+<body class="bg-slate-100 text-slate-800 antialiased">
 
-  <section class="relative overflow-hidden">
-    <img 
-      src="https://raw.githubusercontent.com/keys20/EVALUACION-PROYECTOS-DESARROLLO-APPS/1e4f550d7aadeb9db9813b4bda49d72b5feb13c3/ChatGPT%20Image%2016%20may%202026%2C%2007_18_54%20p.m..png"
-      class="w-full h-[350px] md:h-[500px] object-cover"
-      alt="Presentación de proyectos"
-    >
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="absolute inset-0 flex items-center justify-center text-center px-4">
-      <div class="fade-in max-w-5xl">
-        <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-          Rúbrica de Evaluación<br>de Proyectos Finales
-        </h1>
-        <p class="text-white text-lg sm:text-xl md:text-2xl font-semibold">
-          Politécnico La Presentación Fe y Alegría
+  <section class="relative overflow-hidden bg-slate-900 text-white py-12 px-4 shadow-lg">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div>
+        <span class="bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+          Rúbrica Oficial Interactiva
+        </span>
+        <h1 class="text-3xl md:text-4xl font-black mt-2">Politécnico La Presentación Fe y Alegría</h1>
+        <p class="text-slate-300 text-sm md:text-base mt-1">
+          Desarrollo de Apps y S.I. | Docente: Lic. Ramón Mercedes Mejía
         </p>
-        <p class="text-slate-300 text-md md:text-lg mt-2">
-          Asignaturas: Des. de Apps y S.I.
-        </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-3">
-          <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
-            👨‍🏫 Docente: <strong>Lic. Ramón Mercedes Mejía</strong>
-          </div>
-          <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
-            🎯 Total: <strong>25 Puntos Máx.</strong>
-          </div>
-          <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
-            ⏱️ 15 min por grupo
-          </div>
-        </div>
+      </div>
+      <div class="bg-white/10 p-4 rounded-2xl border border-white/10">
+        <div class="text-sm text-slate-300">Puntaje Máximo Global</div>
+        <div class="text-3xl font-black text-blue-400">25 Puntos</div>
       </div>
     </div>
   </section>
 
-  <div class="max-w-7xl mx-auto px-4 md:px-6">
-
-    <section class="glass rounded-3xl shadow-2xl p-5 md:p-8 mb-8 mt-[-50px] md:mt-[-80px] relative z-10 fade-in">
-      <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-8">
-        Jurados Evaluadores y Distribución de Puntos
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-          <h3 class="font-bold text-blue-700 mb-3 text-lg flex justify-between">
-            <span>🛠️ Parte Técnica</span>
-            <span class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-lg">9 Ptos</span>
-          </h3>
-          <ul class="space-y-2 text-sm md:text-base text-slate-700">
-            <li>• Frangel Sosa</li>
-            <li>• Cándida M. Peguero</li>
-            <li>• Luis E. Guerrero</li>
-          </ul>
-        </div>
-
-        <div class="bg-green-50 rounded-2xl p-6 border border-green-100">
-          <h3 class="font-bold text-green-700 mb-3 text-lg flex justify-between">
-            <span>✍️ Ortografía y Expresión</span>
-            <span class="bg-green-200 text-green-800 text-xs px-2 py-1 rounded-lg">5 Ptos</span>
-          </h3>
-          <ul class="space-y-2 text-sm md:text-base text-slate-700">
-            <li>• Rosa María Reyes</li>
-            <li>• Josefina Alonzo</li>
-          </ul>
-        </div>
-
-        <div class="bg-yellow-50 rounded-2xl p-6 border border-yellow-100">
-          <h3 class="font-bold text-yellow-700 mb-3 text-lg flex justify-between">
-            <span>💡 Emprendimiento</span>
-            <span class="bg-yellow-200 text-yellow-800 text-xs px-2 py-1 rounded-lg">5 Ptos</span>
-          </h3>
-          <ul class="space-y-2 text-sm md:text-base text-slate-700">
-            <li>• María Castillos</li>
-            <li>• José Ángel Morillo</li>
-          </ul>
-        </div>
-
-        <div class="bg-purple-50 rounded-2xl p-6 border border-purple-100">
-          <h3 class="font-bold text-purple-700 mb-3 text-lg flex justify-between">
-            <span>🚀 Innovación e Impacto</span>
-            <span class="bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded-lg">6 Ptos</span>
-          </h3>
-          <ul class="space-y-2 text-sm md:text-base text-slate-700">
-            <li>• Gregorio Rojas Rosario</li>
-            <li>• Juana R. Almonte</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 mb-8 fade-in">
-      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
-        <h2 class="text-2xl md:text-3xl font-bold text-blue-700">
-          Agenda de Proyectos (16 Grupos)
+  <main class="max-w-7xl mx-auto px-4 md:px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    
+    <div class="lg:col-span-1 space-y-6">
+      <div class="bg-white p-6 rounded-3xl shadow-xl border border-slate-200 sticky top-6">
+        <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+          <span>👥</span> Seleccionar Grupo
         </h2>
-        <input
-          type="text"
-          id="busqueda"
-          placeholder="Buscar proyecto o integrantes..."
-          class="border p-3 rounded-2xl w-full lg:w-80 outline-none focus:ring-2 focus:ring-blue-400"
-        >
-      </div>
-      <div 
-        id="contenedorProyectos"
-        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
-      ></div>
-    </section>
+        
+        <div class="mb-4">
+          <input
+            type="text"
+            id="busqueda"
+            placeholder="Buscar por nombre o GP..."
+            class="w-full border border-slate-300 p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 transition"
+          >
+        </div>
 
-  </div>
+        <div id="listaGrupos" class="space-y-2 max-h-[450px] overflow-y-auto pr-2">
+          </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div id="panelEvaluacion" class="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-200 hidden fade-in">
+        
+        <div class="border-b border-slate-200 pb-6 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span id="evalGrupoBadge" class="bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-xl text-sm"></span>
+            <h2 id="evalProyectoNombre" class="text-2xl md:text-3xl font-black text-slate-900 mt-2"></h2>
+            <p id="evalIntegrantes" class="text-slate-500 mt-1 text-sm md:text-base"></p>
+          </div>
+          <div class="bg-slate-900 text-white p-4 rounded-2xl text-center min-w-[110px] self-start sm:self-center">
+            <span class="text-xs uppercase text-slate-400 block tracking-wider">Nota Actual</span>
+            <span id="notaFinalGlobal" class="text-3xl font-black text-green-400">0</span>
+            <span class="text-slate-400 text-sm font-bold">/25</span>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          
+          <div class="bg-blue-50/50 rounded-2xl p-5 border border-blue-100">
+            <div class="flex justify-between items-center mb-4 border-b border-blue-200 pb-2">
+              <div>
+                <h3 class="font-bold text-blue-800 text-lg">🛠️ Parte Técnica</h3>
+                <p class="text-xs text-slate-500">Jurados: Frangel Sosa, Cándida M. Peguero, Luis E. Guerrero</p>
+              </div>
+              <span class="bg-blue-600 text-white font-bold px-3 py-1 rounded-xl text-sm">
+                Subtotal: <span id="subTecnica">0</span>/9
+              </span>
+            </div>
+            <div class="space-y-3" id="contenedorTecnica"></div>
+          </div>
+
+          <div class="bg-green-50/50 rounded-2xl p-5 border border-green-100">
+            <div class="flex justify-between items-center mb-4 border-b border-green-200 pb-2">
+              <div>
+                <h3 class="font-bold text-green-800 text-lg">✍️ Ortografía y Expresión</h3>
+                <p class="text-xs text-slate-500">Jurados: Rosa María Reyes, Josefina Alonzo</p>
+              </div>
+              <span class="bg-green-600 text-white font-bold px-3 py-1 rounded-xl text-sm">
+                Subtotal: <span id="subOrtografia">0</span>/5
+              </span>
+            </div>
+            <div class="space-y-3" id="contenedorOrtografia"></div>
+          </div>
+
+          <div class="bg-yellow-50/50 rounded-2xl p-5 border border-yellow-100">
+            <div class="flex justify-between items-center mb-4 border-b border-yellow-200 pb-2">
+              <div>
+                <h3 class="font-bold text-yellow-800 text-lg">💡 Visión de Emprendimiento</h3>
+                <p class="text-xs text-slate-500">Jurados: María Castillos, José Ángel Morillo</p>
+              </div>
+              <span class="bg-yellow-600 text-white font-bold px-3 py-1 rounded-xl text-sm">
+                Subtotal: <span id="subEmprendimiento">0</span>/5
+              </span>
+            </div>
+            <div class="space-y-3" id="contenedorEmprendimiento"></div>
+          </div>
+
+          <div class="bg-purple-50/50 rounded-2xl p-5 border border-purple-100">
+            <div class="flex justify-between items-center mb-4 border-b border-purple-200 pb-2">
+              <div>
+                <h3 class="font-bold text-purple-800 text-lg">🚀 Innovación e Impacto</h3>
+                <p class="text-xs text-slate-500">Jurados: Gregorio Rojas Rosario, Juana R. Almonte</p>
+              </div>
+              <span class="bg-purple-600 text-white font-bold px-3 py-1 rounded-xl text-sm">
+                Subtotal: <span id="subInnovacion">0</span>/6
+              </span>
+            </div>
+            <div class="space-y-3" id="contenedorInnovacion"></div>
+          </div>
+
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-200 flex flex-wrap gap-4">
+          <button 
+            onclick="generarReporteAlerta()"
+            class="flex-1 bg-slate-900 hover:bg-slate-800 text-white p-4 rounded-xl font-bold transition text-center shadow-lg active:scale-95"
+          >
+            📋 Guardar y Mostrar Reporte Consolidado
+          </button>
+        </div>
+
+      </div>
+
+      <div id="estadoVacio" class="bg-slate-50 border-2 border-dashed border-slate-300 rounded-3xl p-12 text-center text-slate-500">
+        <div class="text-5xl mb-4">📊</div>
+        <p class="text-xl font-bold text-slate-700">Ningún grupo seleccionado para evaluar</p>
+        <p class="text-sm mt-1">Selecciona un proyecto de la lista de la izquierda para desplegar la rúbrica interactiva.</p>
+      </div>
+
+    </div>
+  </main>
 
 <script>
-// Base de datos de los 16 proyectos configurados estrictamente bajo la nueva Rúbrica de 25 puntos
+// Base de datos fija de los 16 Grupos oficiales
 const proyectos = [
-  { nombre: "CARLOTAS Y POSTRES", participantes: "MILDRED Y CRISMEIDY", prefijo: "GP1" },
-  { nombre: "GALLO PLUS", participantes: "ANGEL MANUEL Y BRAILIN", prefijo: "GP2" },
-  { nombre: "RINCONCITOS DE QUISQUEYA", participantes: "ALEXA Y WILANI", prefijo: "GP3" },
-  { nombre: "MUSICBOX", participantes: "RAYBELIS Y SUJEIDI", prefijo: "GP4" },
-  { nombre: "MARAND CAR", participantes: "MARIEL Y ANDRES", prefijo: "GP5" },
-  { nombre: "NAILS YAILIN", participantes: "MARIA DEL CARMEN", prefijo: "GP6" },
-  { nombre: "KEYSNOTE", participantes: "WILDALYS", prefijo: "GP7" },
-  { nombre: "SALES", participantes: "SAID GABRIEL Y LUIS ALFREDO", prefijo: "GP8" },
-  { nombre: "DIAZ CONSTRUCTION GROUP", participantes: "JANNA CARLENE", prefijo: "GP9" },
-  { nombre: "LYNSPORT", participantes: "WALI Y DERLIN ALFREDO", prefijo: "GP10" },
-  { nombre: "COMMUNITY KIDS", participantes: "CHARMELYS E IRIS LEIDY", prefijo: "GP11" },
-  { nombre: "EASY RESERVE", participantes: "ROBERCY Y ELIZABETH", prefijo: "GP12" },
-  { nombre: "HORSEPLUS", participantes: "ALEXANDER Y ÁNGEL LUIS", prefijo: "GP13" },
-  { nombre: "AQUARIS NOVA", participantes: "RANDY ANTONIO Y BRAILYN OLVEIRY", prefijo: "GP14" },
-  { nombre: "MAGIC JUNGLE", participantes: "FANNY Y MARIANNY", prefijo: "GP15" },
-  { nombre: "POWER PISTON", participantes: "JUAN EMILIO Y JULIO ALBERTO", prefijo: "GP16" }
+  { id: 0, nombre: "CARLOTAS Y POSTRES", participantes: "MILDRED Y CRISMEIDY", prefijo: "GP1" },
+  { id: 1, nombre: "GALLO PLUS", participantes: "ANGEL MANUEL Y BRAILIN", prefijo: "GP2" },
+  { id: 2, nombre: "RINCONCITOS DE QUISQUEYA", participantes: "ALEXA Y WILANI", prefijo: "GP3" },
+  { id: 3, nombre: "MUSICBOX", participantes: "RAYBELIS Y SUJEIDI", prefijo: "GP4" },
+  { id: 4, nombre: "MARAND CAR", participantes: "MARIEL Y ANDRES", prefijo: "GP5" },
+  { id: 5, nombre: "NAILS YAILIN", participantes: "MARIA DEL CARMEN", prefijo: "GP6" },
+  { id: 6, font: "bold", nombre: "KEYSNOTE", participantes: "WILDALYS", prefijo: "GP7" },
+  { id: 7, nombre: "SALES", participantes: "SAID GABRIEL Y LUIS ALFREDO", prefijo: "GP8" },
+  { id: 8, nombre: "DIAZ CONSTRUCTION GROUP", participantes: "JANNA CARLENE", prefijo: "GP9" },
+  { id: 9, nombre: "LYNSPORT", participantes: "WALI Y DERLIN ALFREDO", prefijo: "GP10" },
+  { id: 10, nombre: "COMMUNITY KIDS", participantes: "CHARMELYS E IRIS LEIDY", prefijo: "GP11" },
+  { id: 11, nombre: "EASY RESERVE", participantes: "ROBERCY Y ELIZABETH", prefijo: "GP12" },
+  { id: 12, nombre: "HORSEPLUS", participantes: "ALEXANDER Y ÁNGEL LUIS", prefijo: "GP13" },
+  { id: 13, nombre: "AQUARIS NOVA", participantes: "RANDY ANTONIO Y BRAILYN OLVEIRY", prefijo: "GP14" },
+  { id: 14, nombre: "MAGIC JUNGLE", participantes: "FANNY Y MARIANNY", prefijo: "GP15" },
+  { id: 15, nombre: "POWER PISTON", participantes: "JUAN EMILIO Y JULIO ALBERTO", prefijo: "GP16" }
 ];
 
-const contenedor = document.getElementById("contenedorProyectos");
-const buscador = document.getElementById("busqueda");
+// Configuración de Criterios Oficiales de la Rúbrica
+const estructuraRubrica = {
+  tecnica: [
+    { id: "t1", desc: "Utiliza nombres descriptivos y significativos para variables y funciones" },
+    { id: "t2", desc: "Comenta el código de manera clara y concisa" },
+    { id: "t3", desc: "Estructura el código de manera ordenada y legible" },
+    { id: "t4", desc: "Omite código redundante o innecesario" },
+    { id: "t5", desc: "Sigue los estándares de codificación y mejores prácticas" },
+    { id: "t6", desc: "El proyecto cumple con todos los requisitos funcionales" },
+    { id: "t7", desc: "El software se ejecuta sin errores" },
+    { id: "t8", desc: "La solución es eficiente y escalable" },
+    { id: "t9", desc: "Maneja adecuadamente excepciones y errores" }
+  ],
+  ortografia: [
+    { id: "o1", desc: "Utiliza un lenguaje apropiado y no utiliza jerga técnica excesiva" },
+    { id: "o2", desc: "Toma en cuenta los signos de puntuación y emplea reglas de ortografía" },
+    { id: "o3", desc: "La redacción escrita es clara, coherente y sin ambigüedades" },
+    { id: "o4", desc: "Se expresa verbalmente con fluidez y sin muletillas" },
+    { id: "o5", desc: "Emplea un vocabulario variado y preciso, acorde al contexto del proyecto" }
+  ],
+  emprendimiento: [
+    { id: "e1", desc: "Innovación y creatividad: Presenta una idea original y novedosa" },
+    { id: "e2", desc: "Impacto social: Demuestra un beneficio real o potencial en la comunidad" },
+    { id: "e3", desc: "Viabilidad: El proyecto es factible y tiene proyección para su ejecución" },
+    { id: "e4", desc: "Escalabilidad: La propuesta puede crecer o adaptarse a mayor escala" },
+    { id: "e5", desc: "Sostenibilidad: Considera aspectos económicos, ambientales o sociales" }
+  ],
+  innovacion: [
+    { id: "i1", desc: "Recurso multimedia: Incluye imágenes o videos relevantes al proyecto" },
+    { id: "i2", desc: "Utiliza efectos visuales adecuados en la interfaz / presentación" },
+    { id: "i3", desc: "Presentación oral: Presenta documentación técnica y de usuario clara" },
+    { id: "i4", desc: "Habla de manera clara y audible durante la defensa" },
+    { id: "i5", desc: "Participación e impacto: Engancha al público, demuestra dominio y responde dudas" },
+    { id: "i6", desc: "Innovación técnica: Introduce elementos innovadores en su solución tecnológica" }
+  ]
+};
 
-function mostrarProyectos(lista){
-  contenedor.innerHTML = "";
-  lista.forEach((p) => {
-    const nombreEscapado = p.nombre.replace(/'/g, "\\'");
-    const participantesEscapados = p.participantes.replace(/'/g, "\\'");
-    const prefijoEscapado = p.prefijo.replace(/'/g, "\\'");
+// Matriz global indexada para almacenar las calificaciones en tiempo real de cada grupo
+let evaluacionesCacheadas = {};
+let grupoSeleccionadoId = null;
 
-    contenedor.innerHTML += `
-      <div class="bg-slate-50 rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-1 border border-slate-200">
-        <div class="flex justify-between items-center gap-3 mb-4 flex-wrap">
-          <span class="bg-blue-600 text-white px-4 py-1.2 rounded-xl text-xs font-bold">
-            ${p.prefijo}
-          </span>
-          <span class="text-slate-500 text-xs md:text-sm">⏱️ 15 min</span>
+// Inicializador del Caché limpio
+proyectos.forEach(p => {
+  evaluacionesCacheadas[p.id] = {
+    tecnica: { t1:0, t2:0, t3:0, t4:0, t5:0, t6:0, t7:0, t8:0, t9:0 },
+    ortografia: { o1:0, o2:0, o3:0, o4:0, o5:0 },
+    emprendimiento: { e1:0, e2:0, e3:0, e4:0, e5:0 },
+    innovacion: { i1:0, i2:0, i3:0, i4:0, i5:0, i6:0 }
+  };
+});
+
+// Elementos DOM Básicos
+const listaGruposContainer = document.getElementById("listaGrupos");
+const buscadorInput = document.getElementById("busqueda");
+const panelEvaluacion = document.getElementById("panelEvaluacion");
+const estadoVacio = document.getElementById("estadoVacio");
+
+function renderizarListaGrupos(lista) {
+  listaGruposContainer.innerHTML = "";
+  lista.forEach(p => {
+    const isSelected = grupoSeleccionadoId === p.id;
+    const totalGrupo = calcularTotalProyecto(p.id);
+    
+    listaGruposContainer.innerHTML += `
+      <button 
+        onclick="seleccionarGrupo(${p.id})"
+        class="w-full text-left p-3.5 rounded-xl border transition flex items-center justify-between gap-2 ${
+          isSelected 
+            ? 'bg-blue-600 text-white border-blue-600 font-bold shadow-md' 
+            : 'bg-slate-50 hover:bg-slate-200 border-slate-200 text-slate-700'
+        }"
+      >
+        <div class="truncate">
+          <span class="inline-block text-xs uppercase px-1.5 py-0.5 rounded ${isSelected ? 'bg-white/20 text-white' : 'bg-slate-300 text-slate-800'} font-bold mr-1.5">${p.prefijo}</span>
+          <strong class="text-sm block sm:inline">${p.nombre}</strong>
         </div>
-        <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-4 break-words">
-          ${p.nombre}
-        </h3>
-        <p class="text-slate-600 mb-6 text-sm md:text-base">
-          👨‍💻 Presentado por:<br>
-          <strong>${p.participantes}</strong>
-        </p>
-        <button
-          class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white p-3 rounded-2xl font-semibold transition shadow-md"
-          onclick="mostrarRubricaDetallada('${nombreEscapado}', '${participantesEscapados}', '${prefijoEscapado}')"
-        >
-          Ver Rúbrica de Evaluación
-        </button>
+        <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-md ${isSelected ? 'bg-blue-900/40 text-blue-200' : 'bg-slate-200 text-slate-800'} ml-auto shrink-0">
+          ${totalGrupo} pts
+        </span>
+      </button>
+    `;
+  });
+}
+
+function seleccionarGrupo(id) {
+  grupoSeleccionadoId = id;
+  const p = proyectos.find(item => item.id === id);
+  
+  // Actualizar UI de listas
+  const textoFiltro = buscadorInput.value.toLowerCase();
+  const filtrados = proyectos.filter(item => item.nombre.toLowerCase().includes(textoFiltro) || item.prefijo.toLowerCase().includes(textoFiltro));
+  renderizarListaGrupos(filtrados);
+
+  // Mostrar Paneles
+  estadoVacio.classList.add("hidden");
+  panelEvaluacion.classList.remove("hidden");
+
+  // Inyectar Metadatos del encabezado
+  document.getElementById("evalGrupoBadge").innerText = p.prefijo;
+  document.getElementById("evalProyectoNombre").innerText = p.nombre;
+  document.getElementById("evalIntegrantes").innerText = `👨‍💻 Desarrolladores: ${p.participantes}`;
+
+  // Renderizar las filas de controles iterativamente
+  construirSeccionCriterios("tecnica", "contenedorTecnica");
+  construirSeccionCriterios("ortografia", "contenedorOrtografia");
+  construirSeccionCriterios("emprendimiento", "contenedorEmprendimiento");
+  construirSeccionCriterios("innovacion", "contenedorInnovacion");
+
+  actualizarTotalesUI();
+}
+
+function construirSeccionCriterios(bloqueKey, contenedorId) {
+  const container = document.getElementById(contenedorId);
+  container.innerHTML = "";
+  
+  estructuraRubrica[bloqueKey].forEach(crit => {
+    const valorActual = evaluacionesCacheadas[grupoSeleccionadoId][bloqueKey][crit.id];
+    
+    container.innerHTML += `
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-3 rounded-xl border border-slate-200/60 shadow-sm">
+        <p class="text-sm text-slate-700 leading-snug max-w-xl">${crit.desc}</p>
+        
+        <div class="flex items-center gap-2 self-end sm:self-center">
+          <button 
+            onclick="cambiarPunto('${bloqueKey}', '${crit.id}', 0)"
+            class="px-2.5 py-1 rounded-lg font-bold text-xs transition border ${
+              valorActual === 0 
+                ? 'bg-red-500 text-white border-red-500' 
+                : 'bg-slate-100 text-slate-400 border-slate-200 hover:bg-slate-200'
+            }"
+          >
+            0 Ptos
+          </button>
+          <button 
+            onclick="cambiarPunto('${bloqueKey}', '${crit.id}', 1)"
+            class="px-2.5 py-1 rounded-lg font-bold text-xs transition border ${
+              valorActual === 1 
+                ? 'bg-green-500 text-white border-green-500' 
+                : 'bg-slate-100 text-slate-400 border-slate-200 hover:bg-slate-200'
+            }"
+          >
+            1 Pto
+          </button>
+        </div>
       </div>
     `;
   });
 }
 
-function registrarBuscador() {
-  buscador.addEventListener("keyup", () => {
-    const texto = buscador.value.toLowerCase();
-    const filtrados = proyectos.filter(p =>
-      p.nombre.toLowerCase().includes(texto) || 
-      p.participantes.toLowerCase().includes(texto) ||
-      p.prefijo.toLowerCase().includes(texto)
-    );
-    mostrarProyectos(filtrados);
-  });
+function cambiarPunto(bloqueKey, critId, nuevoValor) {
+  if(grupoSeleccionadoId === null) return;
+  
+  // Guardar en el estado interno
+  evaluacionesCacheadas[grupoSeleccionadoId][bloqueKey][critId] = nuevoValor;
+  
+  // Refrescar componentes vinculados
+  seleccionarGrupo(grupoSeleccionadoId);
 }
 
-function mostrarRubricaDetallada(nombre, participantes, grupo){
+function calcularSubtotalBloque(grupoId, bloqueKey) {
+  let suma = 0;
+  for (let critId in evaluacionesCacheadas[grupoId][bloqueKey]) {
+    suma += evaluacionesCacheadas[grupoId][bloqueKey][critId];
+  }
+  return suma;
+}
+
+function calcularTotalProyecto(grupoId) {
+  return calcularSubtotalBloque(grupoId, "tecnica") +
+         calcularSubtotalBloque(grupoId, "ortografia") +
+         calcularSubtotalBloque(grupoId, "emprendimiento") +
+         calcularSubtotalBloque(grupoId, "innovacion");
+}
+
+function actualizarTotalesUI() {
+  if(grupoSeleccionadoId === null) return;
+
+  const t = calcularSubtotalBloque(grupoSeleccionadoId, "tecnica");
+  const o = calcularSubtotalBloque(grupoSeleccionadoId, "ortografia");
+  const e = calcularSubtotalBloque(grupoSeleccionadoId, "emprendimiento");
+  const i = calcularSubtotalBloque(grupoSeleccionadoId, "innovacion");
+  const global = t + o + e + i;
+
+  document.getElementById("subTecnica").innerText = t;
+  document.getElementById("subOrtografia").innerText = o;
+  document.getElementById("subEmprendimiento").innerText = e;
+  document.getElementById("subInnovacion").innerText = i;
+  
+  const notaGlobalContainer = document.getElementById("notaFinalGlobal");
+  notaGlobalContainer.innerText = global;
+
+  // Feedback de color dinámico en base a la nota acumulada
+  if(global >= 22) { notaGlobalContainer.className = "text-3xl font-black text-green-500"; }
+  else if(global >= 17) { notaGlobalContainer.className = "text-3xl font-black text-yellow-500"; }
+  else { notaGlobalContainer.className = "text-3xl font-black text-red-500"; }
+}
+
+function generarReporteAlerta() {
+  if(grupoSeleccionadoId === null) return;
+  
+  const p = proyectos.find(item => item.id === grupoSeleccionadoId);
+  const t = calcularSubtotalBloque(grupoSeleccionadoId, "tecnica");
+  const o = calcularSubtotalBloque(grupoSeleccionadoId, "ortografia");
+  const e = calcularSubtotalBloque(grupoSeleccionadoId, "emprendimiento");
+  const i = calcularSubtotalBloque(grupoSeleccionadoId, "innovacion");
+  const global = t + o + e + i;
+
   alert(
-    `📋 RÚBRICA OFICIAL DE EVALUACIÓN — ${grupo}\n` +
+    `✅ EVALUACIÓN GUARDADA CON ÉXITO\n` +
     `----------------------------------------------------------------------\n` +
-    `📌 Proyecto: ${nombre}\n` +
-    `👨‍💻 Integrantes: ${participantes}\n` +
+    `🏫 Politécnico La Presentación Fe y Alegría\n` +
+    `📋 Reporte Consolidado de Calificación Final\n` +
+    `----------------------------------------------------------------------\n` +
+    `📌 Grupo: ${p.prefijo} - ${p.nombre}\n` +
+    `👨‍💻 Integrantes: ${p.participantes}\n` +
     `----------------------------------------------------------------------\n\n` +
-    
-    `🛠️ 1. PARTE TÉCNICA (Jurados: Frangel Sosa, Cándida M. Peguero, Luis E. Guerrero) — Máx 9 Ptos\n` +
-    `  • Buenas prácticas de codificación:\n` +
-    `    - Utiliza nombres descriptivos para variables/funciones (1 Pto)\n` +
-    `    - Comenta el código de manera clara y concisa (1 Pto)\n` +
-    `    - Estructura el código de manera ordenada y legible (1 Pto)\n` +
-    `    - Omite código redundante o innecesario (1 Pto)\n` +
-    `    - Sigue los estándares de codificación (1 Pto)\n` +
-    `  • Funcionalidad y desempeño:\n` +
-    `    - El proyecto cumple con todos los requisitos funcionales (1 Pto)\n` +
-    `    - El software se ejecuta sin errores en tiempo real (1 Pto)\n` +
-    `    - La solución es eficiente y escalable (1 Pto)\n` +
-    `    - Maneja adecuadamente excepciones y errores (1 Pto)\n\n` +
-
-    `✍️ 2. ORTOGRAFÍA Y EXPRESIÓN (Jurados: Rosa María Reyes, Josefina Alonzo) — Máx 5 Ptos\n` +
-    `  • Utiliza lenguaje apropiado sin jerga técnica excesiva (1 Pto)\n` +
-    `  • Toma en cuenta signos de puntuación y reglas ortográficas (1 Pto)\n` +
-    `  • La redacción escrita es clara, coherente y sin ambigüedades (1 Pto)\n` +
-    `  • Se expresa verbalmente con fluidez y sin muletillas (1 Pto)\n` +
-    `  • Emplea un vocabulario variado y preciso acorde al contexto (1 Pto)\n\n` +
-
-    `💡 3. VISIÓN DE EMPRENDIMIENTO (Jurados: María Castillos, José Ángel Morillo) — Máx 5 Ptos\n` +
-    `  • Innovación y creatividad: Presenta una idea original y novedosa (1 Pto)\n` +
-    `  • Impacto social: Demuestra beneficio real o potencial en la comunidad (1 Pto)\n` +
-    `  • Viabilidad: El proyecto es factible y tiene proyección de ejecución (1 Pto)\n` +
-    `  • Escalabilidad: La propuesta puede crecer o adaptarse a mayor escala (1 Pto)\n` +
-    `  • Sostenibilidad: Considera aspectos económicos/ambientales/sociales (1 Pto)\n\n` +
-
-    `🚀 4. INNOVACIÓN E IMPACTO (Jurados: Gregorio Rojas Rosario, Juana R. Almonte) — Máx 6 Ptos\n` +
-    `  • Recurso multimedia: Incluye imágenes o videos relevantes (1 Pto)\n` +
-    `  • Utiliza efectos visuales adecuados en la presentación (1 Pto)\n` +
-    `  • Presentación oral: Presenta documentación técnica y de usuario (1 Pto)\n` +
-    `  • Habla de manera clara y perfectamente audible (1 Pto)\n` +
-    `  • Participación: Engancha al público, domina el tema y responde (1 Pto)\n` +
-    `  • Innovación técnica: Introduce elementos innovadores tecnológicos (1 Pto)\n\n` +
-    
+    `📊 DESGLOSE DE CALIFICACIÓN POR ÁREA:\n\n` +
+    `🛠️ Parte Técnica: ${t} / 9 Ptos\n` +
+    `✍️ Ortografía y Expresión: ${o} / 5 Ptos\n` +
+    `💡 Visión de Emprendimiento: ${e} / 5 Ptos\n` +
+    `🚀 Innovación e Impacto: ${i} / 6 Ptos\n\n` +
     `----------------------------------------------------------------------\n` +
-    `📊 PUNTAJE TOTAL MÁXIMO POSIBLE: 25 PUNTOS`
+    `🎯 NOTA FINAL DEFINITIVA: ${global} / 25 PUNTOS`
   );
 }
 
-// Inicialización de la App
-mostrarProyectos(proyectos);
-registrarBuscador();
+// Configuración de Buscador en Tiempo Real
+buscadorInput.addEventListener("keyup", () => {
+  const texto = buscadorInput.value.toLowerCase();
+  const filtrados = proyectos.filter(p => 
+    p.nombre.toLowerCase().includes(texto) || 
+    p.prefijo.toLowerCase().includes(texto)
+  );
+  renderizarListaGrupos(filtrados);
+});
+
+// Render Inicial
+renderizarListaGrupos(proyectos);
 </script>
 
 </body>
