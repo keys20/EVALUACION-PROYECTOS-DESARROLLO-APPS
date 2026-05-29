@@ -258,12 +258,34 @@
 
         </h2>
 
-        <input
-          type="text"
-          id="busqueda"
-          placeholder="Buscar proyecto..."
-          class="border p-3 rounded-2xl w-full lg:w-80 outline-none focus:ring-2 focus:ring-blue-400"
-        >
+        <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+          
+          <select 
+            id="selectorJurado" 
+            class="border p-3 rounded-2xl bg-white outline-none focus:ring-2 focus:ring-blue-400 text-sm font-medium text-slate-700 w-full sm:w-60"
+          >
+            <option value="todos">🔍 Todos los Jurados</option>
+            <option value="Frangel">Frangel</option>
+            <option value="Candy">Candy</option>
+            <option value="Luis">Luis</option>
+            <option value="Candida Maria Peguero">Candida Maria Peguero</option>
+            <option value="Nely">Nely</option>
+            <option value="Josefina Alonzo">Josefina Alonzo</option>
+            <option value="Divina">Divina</option>
+            <option value="Lourdes">Lourdes</option>
+            <option value="Juana Almonte">Juana Almonte</option>
+            <option value="Gregorio">Gregorio</option>
+            <option value="Juana">Juana</option>
+            <option value="Secundina Duran">Secundina Duran</option>
+          </select>
+
+          <input
+            type="text"
+            id="busqueda"
+            placeholder="Buscar proyecto..."
+            class="border p-3 rounded-2xl w-full sm:w-60 outline-none focus:ring-2 focus:ring-blue-400"
+          >
+        </div>
 
       </div>
 
@@ -315,19 +337,14 @@
   </div>
 
   <div id="modalDetalle" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative animate-fadeIn">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
       <h3 id="modalTitulo" class="text-2xl font-bold text-blue-700 mb-2 break-words"></h3>
       <p id="modalParticipantes" class="text-slate-600 mb-4 font-medium"></p>
       
       <hr class="mb-4">
       
-      <h4 class="font-bold text-slate-700 mb-2">📋 Jurados Asignados:</h4>
-      <ul class="space-y-2 text-sm text-slate-600 mb-6 bg-slate-50 p-4 rounded-2xl">
-        <li>💻 <strong>Técnica:</strong> Frangel, Candy, Luis, Candida Maria Peguero</li>
-        <li>✍️ <strong>Ortografía:</strong> Nely, Josefina Alonzo</li>
-        <li>💡 <strong>Emprendimiento:</strong> Divina, Lourdes, Juana Almonte</li>
-        <li>🚀 <strong>Innovación:</strong> Gregorio, Juana, Frangel, Secundina Duran</li>
-      </ul>
+      <h4 class="font-bold text-slate-700 mb-2">📋 Mesa Evaluadora:</h4>
+      <div id="modalMesa" class="space-y-2 text-sm text-slate-600 mb-6 bg-slate-50 p-4 rounded-2xl"></div>
 
       <button 
         onclick="cerrarModal()" 
@@ -340,180 +357,161 @@
 
 <script>
 
+// Se mapean los jurados de manera explícita por cada proyecto
 const proyectos = [
-
   {
     nombre: "CARLOTAS Y POSTRES",
-    participantes: "MILDRED Y CRISMEIDY"
+    participantes: "MILDRED Y CRISMEIDY",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Nely", "Josefina Alonzo"]
   },
-
   {
     nombre: "GALLO PLUS",
-    participantes: "ANGEL MANUEL Y BRAILIN"
+    participantes: "ANGEL MANUEL Y BRAILIN",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Divina", "Lourdes", "Juana Almonte"]
   },
-
   {
     nombre: "RINCONCITOS DE QUISQUEYA",
-    participantes: "ALEXA Y WILANI"
+    participantes: "ALEXA Y WILANI",
+    jurados: ["Nely", "Josefina Alonzo", "Gregorio", "Juana", "Secundina Duran"]
   },
-
   {
     nombre: "MUSICBOX",
-    participantes: "RAYBELIS Y SUJEIDI"
+    participantes: "RAYBELIS Y SUJEIDI",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Gregorio", "Juana", "Secundina Duran"]
   },
-
   {
     nombre: "MARAND CAR",
-    participantes: "MARIEL Y ANDRES"
+    participantes: "MARIEL Y ANDRES",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Divina", "Lourdes", "Juana Almonte"]
   },
-
   {
     nombre: "NAILS YAILIN",
-    participantes: "MARIA DEL CARMEN"
+    participantes: "MARIA DEL CARMEN",
+    jurados: ["Nely", "Josefina Alonzo", "Divina", "Lourdes", "Juana Almonte"]
   },
-
   {
     nombre: "KEYSNOTE",
-    participantes: "WILDALYS"
+    participantes: "WILDALYS",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Gregorio", "Juana", "Secundina Duran"]
   },
-
   {
     nombre: "SALES",
-    participantes: "SAID GABRIEL Y LUIS ALFREDO"
+    participantes: "SAID GABRIEL Y LUIS ALFREDO",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Divina", "Lourdes", "Juana Almonte"]
   },
-
   {
     nombre: "DIAZ CONSTRUCTION GROUP",
-    participantes: "JANNA CARLENE"
+    participantes: "JANNA CARLENE",
+    jurados: ["Nely", "Josefina Alonzo", "Gregorio", "Juana", "Secundina Duran"]
   },
-
   {
     nombre: "LYNSPORT",
-    participantes: "WALI Y DERLIN ALFREDO"
+    participantes: "WALI Y DERLIN ALFREDO",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Divina", "Lourdes", "Juana Almonte"]
   },
-
   {
     nombre: "COMMUNITY KIDS",
-    participantes: "CHARMELYS E IRIS LEIDY"
+    participantes: "CHARMELYS E IRIS LEIDY",
+    jurados: ["Nely", "Josefina Alonzo", "Divina", "Lourdes", "Juana Almonte"]
   },
-
   {
     nombre: "EASY RESERVE",
-    participantes: "ROBERCY Y ELIZABETH"
+    participantes: "ROBERCY Y ELIZABETH",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Gregorio", "Juana", "Secundina Duran"]
   },
-
   {
     nombre: "HORSEPLUS",
-    participantes: "ALEXANDER Y ÁNGEL LUIS"
+    participantes: "ALEXANDER Y ÁNGEL LUIS",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Divina", "Lourdes", "Juana Almonte"]
   },
-
   {
     nombre: "AQUARIS NOVA",
-    participantes: "RANDY ANTONIO Y BRAILYN OLVEIRY"
+    participantes: "RANDY ANTONIO Y BRAILYN OLVEIRY",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Gregorio", "Juana", "Secundina Duran"]
   },
-
   {
     nombre: "MAGIC JUNGLE",
-    participantes: "FANNY Y MARIANNY"
+    participantes: "FANNY Y MARIANNY",
+    jurados: ["Nely", "Josefina Alonzo", "Gregorio", "Juana", "Secundina Duran"]
   },
-
   {
     nombre: "POWER PISTON",
-    participantes: "JUAN EMILIO Y JULIO ALBERTO"
+    participantes: "JUAN EMILIO Y JULIO ALBERTO",
+    jurados: ["Frangel", "Candy", "Luis", "Candida Maria Peguero", "Gregorio", "Juana", "Secundina Duran"]
   }
-
 ];
 
 const contenedor = document.getElementById("contenedorProyectos");
 const buscador = document.getElementById("busqueda");
+const selectorJurado = document.getElementById("selectorJurado");
+
 const modal = document.getElementById("modalDetalle");
 const modalTitulo = document.getElementById("modalTitulo");
 const modalParticipantes = document.getElementById("modalParticipantes");
+const modalMesa = document.getElementById("modalMesa");
 
 function mostrarProyectos(lista){
-
   contenedor.innerHTML = "";
-
   lista.forEach((p, index) => {
-
     contenedor.innerHTML += `
-
       <div class="bg-slate-50 rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-
         <div class="flex justify-between items-center gap-3 mb-4 flex-wrap">
-
           <span class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs md:text-sm">
-
             Proyecto ${index + 1}
-
           </span>
-
           <span class="text-slate-500 text-xs md:text-sm">
-
             ⏱️ 15 min
-
           </span>
-
         </div>
-
         <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-4 break-words">
-
           ${p.nombre}
-
         </h3>
-
         <p class="text-slate-600 mb-6 text-sm md:text-base">
-
           👨‍💻 Presentado por:
           <br>
-
           <strong>${p.participantes}</strong>
-
         </p>
-
         <button
           class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white p-3 rounded-2xl font-semibold transition"
-          onclick="mostrarDetalle('${p.nombre}', '${p.participantes}')"
+          onclick="mostrarDetalle('${p.nombre}', '${p.participantes}', '${p.jurados.join(', ')}')"
         >
-
           Ver Detalles
-
         </button>
-
       </div>
-
     `;
-
   });
-
 }
 
-mostrarProyectos(proyectos);
-
-buscador.addEventListener("keyup", () => {
-
+function filtrarProyectos() {
   const texto = buscador.value.toLowerCase();
+  const juradoSeleccionado = selectorJurado.value;
 
-  const filtrados = proyectos.filter(p =>
-
-    p.nombre.toLowerCase().includes(texto)
-
-  );
+  const filtrados = proyectos.filter(p => {
+    const coincideTexto = p.nombre.toLowerCase().includes(texto);
+    const coincideJurado = juradoSeleccionado === "todos" || p.jurados.includes(juradoSeleccionado);
+    return coincideTexto && coincideJurado;
+  });
 
   mostrarProyectos(filtrados);
+}
 
-});
+// Escuchadores de eventos para los inputs
+buscador.addEventListener("keyup", filtrarProyectos);
+selectorJurado.addEventListener("change", filtrarProyectos);
 
-// AHORA MUESTRA EL MODAL CON TODOS LOS JURADOS INCLUIDOS
-function mostrarDetalle(nombre, participantes){
+function mostrarDetalle(nombre, participantes, juradosLista){
   modalTitulo.innerText = nombre;
-  modalParticipantes.innerHTML = "👨‍💻 Presentado por: " + participantes;
+  modalParticipantes.innerHTML = "👨‍💻 Presentado por: <strong>" + participantes + "</strong>";
+  modalMesa.innerHTML = "• " + juradosLista.split(", ").join("<br>• ");
   modal.classList.remove("hidden");
 }
 
 function cerrarModal(){
   modal.classList.add("hidden");
 }
+
+// Inicializar la aplicación
+mostrarProyectos(proyectos);
 
 </script>
 
