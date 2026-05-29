@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
 
-  <!-- RESPONSIVE -->
   <meta 
     name="viewport" 
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
@@ -55,20 +53,16 @@
 
 <body class="bg-slate-100 text-slate-800">
 
-  <!-- HERO -->
   <section class="relative overflow-hidden">
 
-    <!-- IMAGEN -->
     <img 
       src="https://raw.githubusercontent.com/keys20/EVALUACION-PROYECTOS-DESARROLLO-APPS/1e4f550d7aadeb9db9813b4bda49d72b5feb13c3/ChatGPT%20Image%2016%20may%202026%2C%2007_18_54%20p.m..png"
       class="w-full h-[350px] md:h-[500px] object-cover"
       alt="Presentación de proyectos"
     >
 
-    <!-- CAPA OSCURA -->
     <div class="absolute inset-0 bg-black/60"></div>
 
-    <!-- CONTENIDO -->
     <div class="absolute inset-0 flex items-center justify-center text-center px-4">
 
       <div class="fade-in max-w-5xl">
@@ -87,7 +81,6 @@
 
         </p>
 
-        <!-- BADGES -->
         <div class="mt-8 flex flex-wrap justify-center gap-3">
 
           <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
@@ -110,10 +103,8 @@
 
   </section>
 
-  <!-- CONTENIDO -->
   <div class="max-w-7xl mx-auto px-4 md:px-6">
 
-    <!-- BIENVENIDA -->
     <section class="glass rounded-3xl shadow-2xl p-5 md:p-8 mb-8 mt-[-50px] md:mt-[-80px] relative z-10">
 
       <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-6">
@@ -124,7 +115,6 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <!-- HORARIO -->
         <div class="bg-slate-50 rounded-2xl p-5 md:p-6">
 
           <h3 class="font-bold text-xl mb-4 text-slate-700">
@@ -143,7 +133,6 @@
 
         </div>
 
-        <!-- APERTURA -->
         <div class="bg-slate-50 rounded-2xl p-5 md:p-6">
 
           <h3 class="font-bold text-xl mb-4 text-slate-700">
@@ -172,7 +161,6 @@
 
     </section>
 
-    <!-- JURADOS -->
     <section class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 mb-8 fade-in">
 
       <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-8">
@@ -181,9 +169,8 @@
 
       </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-        <!-- CARD -->
         <div class="bg-blue-50 rounded-2xl p-6">
 
           <h3 class="font-bold text-blue-700 mb-3">
@@ -202,7 +189,6 @@
 
         </div>
 
-        <!-- CARD -->
         <div class="bg-green-50 rounded-2xl p-6">
 
           <h3 class="font-bold text-green-700 mb-3">
@@ -215,12 +201,12 @@
 
             <li>• Nely</li>
             <li>• Josefina Alonzo</li>
+            <li>• Candida Maria Peguero</li>
 
           </ul>
 
         </div>
 
-        <!-- CARD -->
         <div class="bg-yellow-50 rounded-2xl p-6">
 
           <h3 class="font-bold text-yellow-700 mb-3">
@@ -233,12 +219,12 @@
 
             <li>• Divina</li>
             <li>• Lourdes</li>
+            <li>• Juana Almonte</li>
 
           </ul>
 
         </div>
 
-        <!-- CARD -->
         <div class="bg-purple-50 rounded-2xl p-6">
 
           <h3 class="font-bold text-purple-700 mb-3">
@@ -252,6 +238,7 @@
             <li>• Gregorio</li>
             <li>• Juana</li>
             <li>• Frangel</li>
+            <li>• Secundina Duran</li>
 
           </ul>
 
@@ -261,10 +248,8 @@
 
     </section>
 
-    <!-- PROYECTOS -->
     <section class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 fade-in">
 
-      <!-- ENCABEZADO -->
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
 
         <h2 class="text-2xl md:text-3xl font-bold text-blue-700">
@@ -273,7 +258,6 @@
 
         </h2>
 
-        <!-- BUSCADOR -->
         <input
           type="text"
           id="busqueda"
@@ -283,7 +267,6 @@
 
       </div>
 
-      <!-- GRID -->
       <div 
         id="contenedorProyectos"
         class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
@@ -291,7 +274,6 @@
 
     </section>
 
-    <!-- CLAUSURA -->
     <section class="bg-gradient-to-r from-blue-700 to-indigo-700 rounded-3xl shadow-2xl p-6 md:p-10 mt-8 text-white fade-in">
 
       <h2 class="text-3xl md:text-4xl font-bold mb-6">
@@ -409,7 +391,8 @@ const proyectos = [
   {
     nombre: "MAGIC JUNGLE",
     participantes: "FANNY Y MARIANNY"
-  }
+  }, // <-- Se corrigió la coma que faltaba aquí
+
   {
     nombre: "POWER PISTON",
     participantes: "JUAN EMILIO Y JULIO ALBERTO"
@@ -509,4 +492,3 @@ function mostrarDetalle(nombre){
 
 </body>
 </html>
-```
