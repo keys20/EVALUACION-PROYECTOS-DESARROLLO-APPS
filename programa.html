@@ -316,103 +316,103 @@
 
 <script>
 
-// Arreglo de objetos con la asignación interna de los jurados correspondientes
+// Se integraron de forma fija los 3 nuevos jurados a la cadena de texto de absolutamente cada proyecto
 const proyectos = [
 
   {
     nombre: "CARLOTAS Y POSTRES",
     participantes: "MILDRED Y CRISMEIDY",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Nely, Josefina Alonzo"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Nely, Josefina Alonzo, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "GALLO PLUS",
     participantes: "ANGEL MANUEL Y BRAILIN",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Divina, Lourdes, Juana Almonte"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Divina, Lourdes, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "RINCONCITOS DE QUISQUEYA",
     participantes: "ALEXA Y WILANI",
-    jurados: "Nely, Josefina Alonzo, Gregorio, Juana, Secundina Duran"
+    jurados: "Nely, Josefina Alonzo, Gregorio, Juana, Candida Maria Peguero, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "MUSICBOX",
     participantes: "RAYBELIS Y SUJEIDI",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Gregorio, Juana, Secundina Duran"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Gregorio, Juana, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "MARAND CAR",
     participantes: "MARIEL Y ANDRES",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Divina, Lourdes, Juana Almonte"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Divina, Lourdes, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "NAILS YAILIN",
     participantes: "MARIA DEL CARMEN",
-    jurados: "Nely, Josefina Alonzo, Divina, Lourdes, Juana Almonte"
+    jurados: "Nely, Josefina Alonzo, Divina, Lourdes, Candida Maria Peguero, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "KEYSNOTE",
     participantes: "WILDALYS",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Gregorio, Juana, Secundina Duran"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Gregorio, Juana, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "SALES",
     participantes: "SAID GABRIEL Y LUIS ALFREDO",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Divina, Lourdes, Juana Almonte"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Divina, Lourdes, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "DIAZ CONSTRUCTION GROUP",
     participantes: "JANNA CARLENE",
-    jurados: "Nely, Josefina Alonzo, Gregorio, Juana, Secundina Duran"
+    jurados: "Nely, Josefina Alonzo, Gregorio, Juana, Candida Maria Peguero, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "LYNSPORT",
     participantes: "WALI Y DERLIN ALFREDO",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Divina, Lourdes, Juana Almonte"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Divina, Lourdes, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "COMMUNITY KIDS",
     participantes: "CHARMELYS E IRIS LEIDY",
-    jurados: "Nely, Josefina Alonzo, Divina, Lourdes, Juana Almonte"
+    jurados: "Nely, Josefina Alonzo, Divina, Lourdes, Candida Maria Peguero, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "EASY RESERVE",
     participantes: "ROBERCY Y ELIZABETH",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Gregorio, Juana, Secundina Duran"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Gregorio, Juana, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "HORSEPLUS",
     participantes: "ALEXANDER Y ÁNGEL LUIS",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Divina, Lourdes, Juana Almonte"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Divina, Lourdes, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "AQUARIS NOVA",
     participantes: "RANDY ANTONIO Y BRAILYN OLVEIRY",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Gregorio, Juana, Secundina Duran"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Gregorio, Juana, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "MAGIC JUNGLE",
     participantes: "FANNY Y MARIANNY",
-    jurados: "Nely, Josefina Alonzo, Gregorio, Juana, Secundina Duran"
+    jurados: "Nely, Josefina Alonzo, Gregorio, Juana, Candida Maria Peguero, Juana Almonte, Secundina Duran"
   },
 
   {
     nombre: "POWER PISTON",
     participantes: "JUAN EMILIO Y JULIO ALBERTO",
-    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Gregorio, Juana, Secundina Duran"
+    jurados: "Frangel, Candy, Luis, Candida Maria Peguero, Gregorio, Juana, Juana Almonte, Secundina Duran"
   }
 
 ];
@@ -426,7 +426,6 @@ function mostrarProyectos(lista){
 
   lista.forEach((p, index) => {
 
-    // Se escapan caracteres para evitar errores en el paso de strings por parámetro
     const nombreEscapado = p.nombre.replace(/'/g, "\\'");
     const participantesEscapados = p.participantes.replace(/'/g, "\\'");
     const juradosEscapados = p.jurados.replace(/'/g, "\\'");
@@ -499,7 +498,6 @@ buscador.addEventListener("keyup", () => {
 
 });
 
-// Función modificada para incluir dinámicamente la selección de jurados asignada
 function mostrarDetalle(nombre, participantes, jurados){
 
   alert(
