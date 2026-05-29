@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
   <meta charset="UTF-8" />
 
-  <!-- RESPONSIVE -->
   <meta 
     name="viewport" 
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
   />
 
   <title>
-    Sistema Digital de Evaluación
+    Programa de Presentación de Proyectos
   </title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,6 +22,11 @@
 
     body{
       overflow-x:hidden;
+    }
+
+    .glass{
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(12px);
     }
 
     .fade-in{
@@ -48,39 +51,49 @@
 
 </head>
 
-<body class="bg-slate-100 min-h-screen text-slate-800">
+<body class="bg-slate-100 text-slate-800">
 
-  <!-- CONTENEDOR -->
-  <div class="max-w-7xl mx-auto px-4 md:px-6 py-6">
+  <section class="relative overflow-hidden">
 
-    <!-- PORTADA -->
-    <div class="relative overflow-hidden rounded-3xl shadow-2xl mb-8 bg-black fade-in">
+    <img 
+      src="https://raw.githubusercontent.com/keys20/EVALUACION-PROYECTOS-DESARROLLO-APPS/1e4f550d7aadeb9db9813b4bda49d72b5feb13c3/ChatGPT%20Image%2016%20may%202026%2C%2007_18_54%20p.m..png"
+      class="w-full h-[350px] md:h-[500px] object-cover"
+      alt="Presentación de proyectos"
+    >
 
-      <img 
-        src="https://raw.githubusercontent.com/keys20/EVALUACION-PROYECTOS-DESARROLLO-APPS/1e4f550d7aadeb9db9813b4bda49d72b5feb13c3/ChatGPT%20Image%2016%20may%202026%2C%2007_18_54%20p.m..png"
-        alt="Tecnología educativa"
-        class="w-full h-[260px] sm:h-[350px] md:h-[500px] object-cover"
-      >
+    <div class="absolute inset-0 bg-black/60"></div>
 
-      <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 flex items-center justify-center text-center px-4">
 
-      <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+      <div class="fade-in max-w-5xl">
 
-        <div>
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
 
-          <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-4 leading-tight">
+          Programa de Presentación
+          <br>
+          de Proyectos Finales
 
-            Plataforma Inteligente
-            <br>
-            de Evaluación
+        </h1>
 
-          </h1>
+        <p class="text-white text-lg sm:text-xl md:text-2xl">
 
-          <p class="text-white text-sm sm:text-lg md:text-2xl">
+          Politécnico Presentación Fe y Alegría
 
-            Sistema digital moderno para evaluación de proyectos
+        </p>
 
-          </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+
+          <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
+            📅 26 de mayo de 2026
+          </div>
+
+          <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
+            📍 Biblioteca del Centro
+          </div>
+
+          <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
+            ⏱️ 15 min por proyecto
+          </div>
 
         </div>
 
@@ -88,452 +101,460 @@
 
     </div>
 
-    <!-- ENCABEZADO -->
-    <div class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 mb-8 fade-in">
+  </section>
 
-      <h2 class="text-2xl md:text-3xl font-bold text-center text-blue-700 mb-2">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
 
-        Evaluación Profesional de Proyectos
+    <section class="glass rounded-3xl shadow-2xl p-5 md:p-8 mb-8 mt-[-50px] md:mt-[-80px] relative z-10">
+
+      <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-6">
+
+        Bienvenida e Inicio de Actividades
 
       </h2>
 
-      <p class="text-center text-slate-500 text-sm md:text-base">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        Plataforma académica para jurados evaluadores
+        <div class="bg-slate-50 rounded-2xl p-5 md:p-6">
 
-      </p>
+          <h3 class="font-bold text-xl mb-4 text-slate-700">
 
-    </div>
+            Horario General
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          </h3>
 
-      <!-- DATOS -->
-      <div class="bg-white rounded-3xl shadow-xl p-5 md:p-6 fade-in">
+          <ul class="space-y-3 text-sm md:text-base">
 
-        <h2 class="text-2xl font-bold mb-6 text-blue-600">
+            <li>🕗 08:00 AM - Bienvenida</li>
+            <li>🕣 08:20 AM - Inicio de Presentaciones</li>
+            <li>🕛 12:00 PM - Clausura</li>
 
-          Datos Generales
-
-        </h2>
-
-        <!-- JURADO -->
-        <div class="mb-5">
-
-          <label class="block font-semibold mb-2">
-
-            Seleccionar Jurado
-
-          </label>
-
-          <select 
-            id="jurado" 
-            class="w-full p-4 border rounded-2xl outline-none focus:ring-2 focus:ring-blue-400"
-          >
-
-            <option value="">
-              Seleccione...
-            </option>
-
-          </select>
+          </ul>
 
         </div>
 
-        <!-- GRUPO -->
-        <div class="mb-5">
+        <div class="bg-slate-50 rounded-2xl p-5 md:p-6">
 
-          <label class="block font-semibold mb-2">
+          <h3 class="font-bold text-xl mb-4 text-slate-700">
 
-            Grupo Evaluado
+            Equipo de Apertura
 
-          </label>
+          </h3>
 
-          <select 
-            id="grupo" 
-            class="w-full p-4 border rounded-2xl outline-none focus:ring-2 focus:ring-blue-400"
-          >
+          <ul class="space-y-3 text-sm md:text-base">
 
-            <option value="">
-              Seleccione...
-            </option>
+            <li>🎤 Presentador: <strong>Osiris</strong></li>
 
-          </select>
+            <li>🙏 Oración: <strong>Wildalis</strong></li>
 
-        </div>
+            <li>🎶 Himnos: <strong>Ramón Mercedes Mejía</strong></li>
 
-        <!-- CATEGORÍA -->
-        <div class="mb-5">
+            <li>👨‍🏫 Coordinador:
+              <strong>Ramón Mercedes Mejía</strong>
+            </li>
 
-          <label class="block font-semibold mb-2">
-
-            Categoría
-
-          </label>
-
-          <input 
-            id="categoria"
-            type="text"
-            readonly
-            class="w-full p-4 border rounded-2xl bg-slate-100"
-          />
+          </ul>
 
         </div>
 
       </div>
 
-      <!-- RESUMEN -->
-      <div class="bg-white rounded-3xl shadow-xl p-5 md:p-6 fade-in">
+    </section>
 
-        <h2 class="text-2xl font-bold mb-6 text-blue-600">
+    <section class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 mb-8 fade-in">
 
-          Resumen de Evaluación
+      <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-8">
 
-        </h2>
+        Jurados Evaluadores
 
-        <!-- TOTALES -->
-        <div class="space-y-4 text-base md:text-lg">
+      </h2>
 
-          <div class="flex justify-between">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-            <span>
-              Subtotal:
-            </span>
+        <div class="bg-blue-50 rounded-2xl p-6">
 
-            <span id="subtotal">
-              0
-            </span>
+          <h3 class="font-bold text-blue-700 mb-3">
 
-          </div>
+            💻 Parte Técnica
 
-          <div class="flex justify-between text-2xl font-bold text-green-600">
+          </h3>
 
-            <span>
-              Total:
-            </span>
+          <ul class="space-y-2 text-sm md:text-base">
 
-            <span id="total">
-              0
-            </span>
+            <li>• Frangel</li>
+            <li>• Candy</li>
+            <li>• Luis</li>
+            <li>• Candida Maria Peguero</li>
 
-          </div>
+          </ul>
 
         </div>
 
-        <!-- BOTONES -->
-        <div class="mt-8 space-y-4">
+        <div class="bg-green-50 rounded-2xl p-6">
 
-          <!-- GUARDAR -->
-          <button
-            onclick="guardarEvaluacion()"
-            class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white p-4 rounded-2xl font-bold text-lg transition"
-          >
+          <h3 class="font-bold text-green-700 mb-3">
 
-            💾 Guardar Evaluación
+            ✍️ Ortografía y Expresión
 
-          </button>
+          </h3>
 
-          <!-- EXPORTAR -->
-          <button
-            onclick="exportarCSV()"
-            class="w-full bg-green-600 hover:bg-green-700 active:scale-95 text-white p-4 rounded-2xl font-bold text-lg transition"
-          >
+          <ul class="space-y-2 text-sm md:text-base">
 
-            📥 Exportar Resultados CSV
+            <li>• Nely</li>
+            <li>• Josefina Alonzo</li>
 
-          </button>
+          </ul>
 
-          <!-- PROGRAMA -->
-          <a
-            href="programa.html"
-            class="block w-full bg-purple-600 hover:bg-purple-700 active:scale-95 text-white p-4 rounded-2xl font-bold text-lg transition text-center"
-          >
+        </div>
 
-            📅 Ver Programa de Actividades
+        <div class="bg-yellow-50 rounded-2xl p-6">
 
-          </a>
+          <h3 class="font-bold text-yellow-700 mb-3">
+
+            💡 Emprendimiento
+
+          </h3>
+
+          <ul class="space-y-2 text-sm md:text-base">
+
+            <li>• Divina</li>
+            <li>• Lourdes</li>
+            <li>• Juana Almonte</li>
+
+          </ul>
+
+        </div>
+
+        <div class="bg-purple-50 rounded-2xl p-6">
+
+          <h3 class="font-bold text-purple-700 mb-3">
+
+            🚀 Innovación e Impacto
+
+          </h3>
+
+          <ul class="space-y-2 text-sm md:text-base">
+
+            <li>• Gregorio</li>
+            <li>• Juana</li>
+            <li>• Frangel</li>
+            <li>• Secundina Duran</li>
+
+          </ul>
 
         </div>
 
       </div>
 
-    </div>
+    </section>
 
-    <!-- EVALUACIÓN -->
-    <div class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 mt-8 fade-in">
+    <section class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 fade-in">
 
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
 
         <h2 class="text-2xl md:text-3xl font-bold text-blue-700">
 
-          Evaluación
+          Agenda de Presentaciones
 
         </h2>
 
-        <div class="bg-blue-50 text-blue-700 px-4 py-2 rounded-2xl text-sm md:text-base">
-
-          Escala:
-          0 = Deficiente |
-          0.5 = Regular |
-          1 = Excelente
-
-        </div>
+        <input
+          type="text"
+          id="busqueda"
+          placeholder="Buscar proyecto..."
+          class="border p-3 rounded-2xl w-full lg:w-80 outline-none focus:ring-2 focus:ring-blue-400"
+        >
 
       </div>
 
-      <!-- CRITERIOS -->
       <div 
-        id="criteriosContainer" 
-        class="space-y-6"
+        id="contenedorProyectos"
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
       ></div>
 
-    </div>
+    </section>
 
-    <!-- RESULTADOS -->
-    <div class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 mt-8 fade-in">
+    <section class="bg-gradient-to-r from-blue-700 to-indigo-700 rounded-3xl shadow-2xl p-6 md:p-10 mt-8 text-white fade-in">
 
-      <h2 class="text-2xl md:text-3xl font-bold text-green-700 mb-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
 
-        Resultados Guardados
+        Clausura
 
       </h2>
 
-      <!-- TABLA RESPONSIVE -->
-      <div class="overflow-x-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-base md:text-lg">
 
-        <table class="w-full min-w-[700px] border-collapse">
+        <ul class="space-y-4">
 
-          <thead>
+          <li>
+            🎤 Palabras de agradecimiento por el coordinator.
+          </li>
 
-            <tr class="bg-slate-200">
+          <li>
+            🗣️ Turno libre.
+          </li>
 
-              <th class="p-4 border text-left">
-                Jurado
-              </th>
+        </ul>
 
-              <th class="p-4 border text-left">
-                Grupo
-              </th>
+        <ul class="space-y-4">
 
-              <th class="p-4 border text-left">
-                Categoría
-              </th>
+          <li>
+            📸 Foto grupal.
+          </li>
 
-              <th class="p-4 border text-left">
-                Total
-              </th>
+          <li>
+            🥂 Brindis de cierre.
+          </li>
 
-            </tr>
-
-          </thead>
-
-          <tbody id="tablaResultados"></tbody>
-
-        </table>
+        </ul>
 
       </div>
 
-    </div>
+    </section>
 
   </div>
 
 <script>
 
-const categorias = {
+// ARRAY DE PROYECTOS CON LA ASIGNACIÓN ESTRUCTURADA DE JURADOS POR CATEGORÍA
+const proyectos = [
 
-  "Frangel Sosa": {
-
-    categoria: "🎨 Diseño, Interfaz y Navegación",
-
-    criterios: [
-
-      "Mantiene una identidad visual moderna y profesional",
-
-      "Utiliza una combinación de colores armoniosa y coherente",
-
-      "Presenta una distribución visual organizada y equilibrada",
-
-      "La interfaz es intuitiva y fácil de utilizar",
-
-      "Los elementos visuales mantienen consistencia gráfica",
-
-      "La tipografía utilizada favorece la legibilidad",
-
-      "La navegación es clara y estructurada",
-
-      "El usuario accede fácilmente a las funcionalidades principales",
-
-      "El flujo de interacción proporciona una experiencia fluida"
-
-    ]
-
+  {
+    nombre: "CARLOTAS Y POSTRES",
+    participantes: "MILDRED Y CRISMEIDY",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
   },
 
-  "Rosa María Reyes": {
-
-    categoria: "✍️ Ortografía y Expresión",
-
-    criterios: [
-
-      "Lenguaje apropiado",
-
-      "Uso correcto de ortografía",
-
-      "Redacción clara",
-
-      "Fluidez verbal",
-
-      "Buen vocabulario"
-
-    ]
-
+  {
+    nombre: "GALLO PLUS",
+    participantes: "ANGEL MANUEL Y BRAILIN",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
   },
 
-  "María Castillos": {
-
-    categoria: "💡 Visión de Emprendimiento",
-
-    criterios: [
-
-      "Idea innovadora",
-
-      "Impacto social",
-
-      "Proyecto viable",
-
-      "Escalable",
-
-      "Sostenible"
-
-    ]
-
+  {
+    nombre: "RINCONCITOS DE QUISQUEYA",
+    participantes: "ALEXA Y WILANI",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
   },
 
-  "Gregorio Rojas Rosario": {
+  {
+    nombre: "MUSICBOX",
+    participantes: "RAYBELIS Y SUJEIDI",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
 
-    categoria: "🚀 Innovación e Impacto",
+  {
+    nombre: "MARAND CAR",
+    participantes: "MARIEL Y ANDRES",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
 
-    criterios: [
+  {
+    nombre: "NAILS YAILIN",
+    participantes: "MARIA DEL CARMEN",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
 
-      "Buenas imágenes/videos",
+  {
+    nombre: "KEYSNOTE",
+    participantes: "WILDALYS",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
 
-      "Efectos visuales adecuados",
+  {
+    nombre: "SALES",
+    participantes: "SAID GABRIEL Y LUIS ALFREDO",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
 
-      "Documentación clara",
+  {
+    nombre: "DIAZ CONSTRUCTION GROUP",
+    participantes: "JANNA CARLENE",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
 
-      "Habla clara",
+  {
+    nombre: "LYNSPORT",
+    participantes: "WALI Y DERLIN ALFREDO",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
 
-      "Dominio del tema",
+  {
+    nombre: "COMMUNITY KIDS",
+    participantes: "CHARMELYS E IRIS LEIDY",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
 
-      "Innovación"
+  {
+    nombre: "EASY RESERVE",
+    participantes: "ROBERCY Y ELIZABETH",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
 
-    ]
+  {
+    nombre: "HORSEPLUS",
+    participantes: "ALEXANDER Y ÁNGEL LUIS",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
 
+  {
+    nombre: "AQUARIS NOVA",
+    participantes: "RANDY ANTONIO Y BRAILYN OLVEIRY",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
+
+  {
+    nombre: "MAGIC JUNGLE",
+    participantes: "FANNY Y MARIANNY",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
+  },
+
+  {
+    nombre: "POWER PISTON",
+    participantes: "JUAN EMILIO Y JULIO ALBERTO",
+    jurados: {
+      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
+      ortografia: "Nely, Josefina Alonzo",
+      emprendimiento: "Divina, Lourdes, Juana Almonte",
+      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
+    }
   }
 
-};
+];
 
-const juradoSelect = document.getElementById('jurado');
+const contenedor = document.getElementById("contenedorProyectos");
+const buscador = document.getElementById("busqueda");
 
-const grupoSelect = document.getElementById('grupo');
+function mostrarProyectos(lista){
 
-const categoriaInput = document.getElementById('categoria');
+  contenedor.innerHTML = "";
 
-const criteriosContainer = document.getElementById('criteriosContainer');
+  lista.forEach((p, index) => {
 
-Object.keys(categorias).forEach(nombre => {
+    const nombreEscapado = p.nombre.replace(/'/g, "\\'");
+    const participantesEscapados = p.participantes.replace(/'/g, "\\'");
+    
+    // Convertimos de forma segura el objeto de jurados a un string JSON válido para pasarlo por parámetro
+    const juradosJSON = JSON.stringify(p.jurados).replace(/'/g, "\\'");
 
-  juradoSelect.innerHTML += `
+    contenedor.innerHTML += `
 
-    <option value="${nombre}">
+      <div class="bg-slate-50 rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-1">
 
-      ${nombre}
+        <div class="flex justify-between items-center gap-3 mb-4 flex-wrap">
 
-    </option>
+          <span class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs md:text-sm">
 
-  `;
+            Proyecto ${index + 1}
 
-});
+          </span>
 
-for(let i = 1; i <= 16; i++) {
+          <span class="text-slate-500 text-xs md:text-sm">
 
-  grupoSelect.innerHTML += `
+            ⏱️ 15 min
 
-    <option value="GP${i}">
+          </span>
 
-      GP${i}
+        </div>
 
-    </option>
+        <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-4 break-words">
 
-  `;
-
-}
-
-juradoSelect.addEventListener('change', () => {
-
-  const jurado = juradoSelect.value;
-
-  criteriosContainer.innerHTML = '';
-
-  if(!jurado) return;
-
-  const info = categorias[jurado];
-
-  categoriaInput.value = info.categoria;
-
-  info.criterios.forEach((criterio, index) => {
-
-    criteriosContainer.innerHTML += `
-
-      <div class="border rounded-3xl p-5 md:p-6 bg-slate-50 shadow-md">
-
-        <h3 class="font-semibold text-base md:text-lg mb-5 text-slate-700 leading-relaxed">
-
-          ${criterio}
+          ${p.nombre}
 
         </h3>
 
-        <div class="flex flex-wrap gap-4 md:gap-6 text-base md:text-lg">
+        <p class="text-slate-600 mb-6 text-sm md:text-base">
 
-          <label class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border cursor-pointer hover:bg-slate-100">
+          👨‍💻 Presentado por:
+          <br>
 
-            <input 
-              type="radio" 
-              name="c${index}" 
-              value="0"
-              onchange="calcularTotal()"
-            >
+          <strong>${p.participantes}</strong>
 
-            0
+        </p>
 
-          </label>
+        <button
+          class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white p-3 rounded-2xl font-semibold transition"
+          onclick="mostrarDetalle('${nombreEscapado}', '${participantesEscapados}', '${juradosJSON}')"
+        >
 
-          <label class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border cursor-pointer hover:bg-slate-100">
+          Ver Detalles
 
-            <input 
-              type="radio" 
-              name="c${index}" 
-              value="0.5"
-              onchange="calcularTotal()"
-            >
-
-            0.5
-
-          </label>
-
-          <label class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border cursor-pointer hover:bg-slate-100">
-
-            <input 
-              type="radio" 
-              name="c${index}" 
-              value="1"
-              onchange="calcularTotal()"
-            >
-
-            1
-
-          </label>
-
-        </div>
+        </button>
 
       </div>
 
@@ -541,164 +562,43 @@ juradoSelect.addEventListener('change', () => {
 
   });
 
+}
+
+mostrarProyectos(proyectos);
+
+buscador.addEventListener("keyup", () => {
+
+  const texto = buscador.value.toLowerCase();
+
+  const filtrados = proyectos.filter(p =>
+
+    p.nombre.toLowerCase().includes(texto)
+
+  );
+
+  mostrarProyectos(filtrados);
+
 });
 
-function calcularTotal() {
+function mostrarDetalle(nombre, participantes, juradosStr){
 
-  let total = 0;
+  // Reconstruimos el objeto original de jurados
+  const jurados = JSON.parse(juradosStr);
 
-  document
-    .querySelectorAll('input[type="radio"]:checked')
-    .forEach(input => {
-
-      total += parseFloat(input.value);
-
-    });
-
-  document.getElementById('subtotal').innerText = total.toFixed(1);
-
-  document.getElementById('total').innerText = total.toFixed(1);
-
-}
-
-function guardarEvaluacion() {
-
-  const jurado = juradoSelect.value;
-
-  const grupo = grupoSelect.value;
-
-  const categoria = categoriaInput.value;
-
-  const total = document.getElementById('total').innerText;
-
-  if(!jurado || !grupo) {
-
-    alert('⚠️ Complete todos los campos');
-
-    return;
-
-  }
-
-  const evaluaciones = JSON.parse(
-    localStorage.getItem('evaluaciones')
-  ) || [];
-
-  evaluaciones.push({
-
-    jurado,
-    grupo,
-    categoria,
-    total
-
-  });
-
-  localStorage.setItem(
-    'evaluaciones',
-    JSON.stringify(evaluaciones)
+  alert(
+    "📊 DETALLES DEL PROYECTO\n" +
+    "-----------------------------------------\n" +
+    "📌 Proyecto: " + nombre + "\n" +
+    "👨‍💻 Integrantes: " + participantes + "\n" +
+    "⏱️ Duración: 15 minutos\n\n" +
+    "📋 JURADOS ASIGNADOS POR ÁREA:\n\n" +
+    "💻 PARTE TÉCNICA:\n" + jurados.tecnica.split(", ").map(j => "  • " + j).join("\n") + "\n\n" +
+    "✍️ ORTOGRAFÍA Y EXPRESIÓN:\n" + jurados.ortografia.split(", ").map(j => "  • " + j).join("\n") + "\n\n" +
+    "💡 EMPRENDIMIENTO:\n" + jurados.emprendimiento.split(", ").map(j => "  • " + j).join("\n") + "\n\n" +
+    "🚀 INNOVACIÓN E IMPACTO:\n" + jurados.innovacion.split(", ").map(j => "  • " + j).join("\n")
   );
 
-  mostrarResultados();
-
-  alert('✅ Evaluación guardada correctamente');
-
 }
-
-function mostrarResultados() {
-
-  const tabla = document.getElementById('tablaResultados');
-
-  tabla.innerHTML = '';
-
-  const evaluaciones = JSON.parse(
-    localStorage.getItem('evaluaciones')
-  ) || [];
-
-  evaluaciones.forEach(e => {
-
-    tabla.innerHTML += `
-
-      <tr class="hover:bg-slate-100 transition">
-
-        <td class="border p-4">
-
-          ${e.jurado}
-
-        </td>
-
-        <td class="border p-4">
-
-          ${e.grupo}
-
-        </td>
-
-        <td class="border p-4">
-
-          ${e.categoria}
-
-        </td>
-
-        <td class="border p-4 font-bold text-green-600">
-
-          ${e.total}
-
-        </td>
-
-      </tr>
-
-    `;
-
-  });
-
-}
-
-function exportarCSV() {
-
-  const evaluaciones = JSON.parse(
-    localStorage.getItem('evaluaciones')
-  ) || [];
-
-  if(evaluaciones.length === 0) {
-
-    alert('⚠️ No hay evaluaciones para exportar');
-
-    return;
-
-  }
-
-  let csv = 'Jurado,Grupo,Categoria,Total\n';
-
-  evaluaciones.forEach(e => {
-
-    csv += `${e.jurado},${e.grupo},${e.categoria},${e.total}\n`;
-
-  });
-
-  const blob = new Blob([csv], {
-
-    type: 'text/csv;charset=utf-8;'
-
-  });
-
-  const link = document.createElement('a');
-
-  const url = URL.createObjectURL(blob);
-
-  link.setAttribute('href', url);
-
-  link.setAttribute(
-    'download',
-    'Resultados_Evaluacion.csv'
-  );
-
-  document.body.appendChild(link);
-
-  link.click();
-
-  document.body.removeChild(link);
-
-}
-
-mostrarResultados();
 
 </script>
 
