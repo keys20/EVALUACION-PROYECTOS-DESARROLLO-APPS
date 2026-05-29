@@ -2,604 +2,251 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-
-  <meta 
-    name="viewport" 
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-  />
-
-  <title>
-    Programa de Presentación de Proyectos
-  </title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Rúbrica de Evaluación de Proyectos Finales</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-
-    html{
-      scroll-behavior:smooth;
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+    .glass { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(12px); }
+    .fade-in { animation: fadeIn 1s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
-    body{
-      overflow-x:hidden;
-    }
-
-    .glass{
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(12px);
-    }
-
-    .fade-in{
-      animation: fadeIn 1s ease;
-    }
-
-    @keyframes fadeIn{
-
-      from{
-        opacity:0;
-        transform:translateY(20px);
-      }
-
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-
-    }
-
   </style>
-
 </head>
-
 <body class="bg-slate-100 text-slate-800">
 
   <section class="relative overflow-hidden">
-
     <img 
       src="https://raw.githubusercontent.com/keys20/EVALUACION-PROYECTOS-DESARROLLO-APPS/1e4f550d7aadeb9db9813b4bda49d72b5feb13c3/ChatGPT%20Image%2016%20may%202026%2C%2007_18_54%20p.m..png"
       class="w-full h-[350px] md:h-[500px] object-cover"
       alt="Presentación de proyectos"
     >
-
     <div class="absolute inset-0 bg-black/60"></div>
-
     <div class="absolute inset-0 flex items-center justify-center text-center px-4">
-
       <div class="fade-in max-w-5xl">
-
         <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-
-          Programa de Presentación
-          <br>
-          de Proyectos Finales
-
+          Rúbrica de Evaluación<br>de Proyectos Finales
         </h1>
-
-        <p class="text-white text-lg sm:text-xl md:text-2xl">
-
-          Politécnico Presentación Fe y Alegría
-
+        <p class="text-white text-lg sm:text-xl md:text-2xl font-semibold">
+          Politécnico La Presentación Fe y Alegría
         </p>
-
+        <p class="text-slate-300 text-md md:text-lg mt-2">
+          Asignaturas: Des. de Apps y S.I.
+        </p>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
-
           <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
-            📅 26 de mayo de 2026
+            👨‍🏫 Docente: <strong>Lic. Ramón Mercedes Mejía</strong>
           </div>
-
           <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
-            📍 Biblioteca del Centro
+            🎯 Total: <strong>25 Puntos Máx.</strong>
           </div>
-
           <div class="bg-white/20 text-white px-4 py-3 rounded-2xl text-sm md:text-base">
-            ⏱️ 15 min por proyecto
+            ⏱️ 15 min por grupo
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <div class="max-w-7xl mx-auto px-4 md:px-6">
 
-    <section class="glass rounded-3xl shadow-2xl p-5 md:p-8 mb-8 mt-[-50px] md:mt-[-80px] relative z-10">
-
-      <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-6">
-
-        Bienvenida e Inicio de Actividades
-
+    <section class="glass rounded-3xl shadow-2xl p-5 md:p-8 mb-8 mt-[-50px] md:mt-[-80px] relative z-10 fade-in">
+      <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-8">
+        Jurados Evaluadores y Distribución de Puntos
       </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <div class="bg-slate-50 rounded-2xl p-5 md:p-6">
-
-          <h3 class="font-bold text-xl mb-4 text-slate-700">
-
-            Horario General
-
+        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+          <h3 class="font-bold text-blue-700 mb-3 text-lg flex justify-between">
+            <span>🛠️ Parte Técnica</span>
+            <span class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-lg">9 Ptos</span>
           </h3>
-
-          <ul class="space-y-3 text-sm md:text-base">
-
-            <li>🕗 08:00 AM - Bienvenida</li>
-            <li>🕣 08:20 AM - Inicio de Presentaciones</li>
-            <li>🕛 12:00 PM - Clausura</li>
-
+          <ul class="space-y-2 text-sm md:text-base text-slate-700">
+            <li>• Frangel Sosa</li>
+            <li>• Cándida M. Peguero</li>
+            <li>• Luis E. Guerrero</li>
           </ul>
-
         </div>
 
-        <div class="bg-slate-50 rounded-2xl p-5 md:p-6">
-
-          <h3 class="font-bold text-xl mb-4 text-slate-700">
-
-            Equipo de Apertura
-
+        <div class="bg-green-50 rounded-2xl p-6 border border-green-100">
+          <h3 class="font-bold text-green-700 mb-3 text-lg flex justify-between">
+            <span>✍️ Ortografía y Expresión</span>
+            <span class="bg-green-200 text-green-800 text-xs px-2 py-1 rounded-lg">5 Ptos</span>
           </h3>
-
-          <ul class="space-y-3 text-sm md:text-base">
-
-            <li>🎤 Presentador: <strong>Osiris</strong></li>
-
-            <li>🙏 Oración: <strong>Wildalis</strong></li>
-
-            <li>🎶 Himnos: <strong>Ramón Mercedes Mejía</strong></li>
-
-            <li>👨‍🏫 Coordinador:
-              <strong>Ramón Mercedes Mejía</strong>
-            </li>
-
+          <ul class="space-y-2 text-sm md:text-base text-slate-700">
+            <li>• Rosa María Reyes</li>
+            <li>• Josefina Alonzo</li>
           </ul>
+        </div>
 
+        <div class="bg-yellow-50 rounded-2xl p-6 border border-yellow-100">
+          <h3 class="font-bold text-yellow-700 mb-3 text-lg flex justify-between">
+            <span>💡 Emprendimiento</span>
+            <span class="bg-yellow-200 text-yellow-800 text-xs px-2 py-1 rounded-lg">5 Ptos</span>
+          </h3>
+          <ul class="space-y-2 text-sm md:text-base text-slate-700">
+            <li>• María Castillos</li>
+            <li>• José Ángel Morillo</li>
+          </ul>
+        </div>
+
+        <div class="bg-purple-50 rounded-2xl p-6 border border-purple-100">
+          <h3 class="font-bold text-purple-700 mb-3 text-lg flex justify-between">
+            <span>🚀 Innovación e Impacto</span>
+            <span class="bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded-lg">6 Ptos</span>
+          </h3>
+          <ul class="space-y-2 text-sm md:text-base text-slate-700">
+            <li>• Gregorio Rojas Rosario</li>
+            <li>• Juana R. Almonte</li>
+          </ul>
         </div>
 
       </div>
-
     </section>
 
     <section class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 mb-8 fade-in">
-
-      <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-8">
-
-        Jurados Evaluadores
-
-      </h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-        <div class="bg-blue-50 rounded-2xl p-6">
-
-          <h3 class="font-bold text-blue-700 mb-3">
-
-            💻 Parte Técnica
-
-          </h3>
-
-          <ul class="space-y-2 text-sm md:text-base">
-
-            <li>• Frangel</li>
-            <li>• Candy</li>
-            <li>• Luis</li>
-            <li>• Candida Maria Peguero</li>
-
-          </ul>
-
-        </div>
-
-        <div class="bg-green-50 rounded-2xl p-6">
-
-          <h3 class="font-bold text-green-700 mb-3">
-
-            ✍️ Ortografía y Expresión
-
-          </h3>
-
-          <ul class="space-y-2 text-sm md:text-base">
-
-            <li>• Nely</li>
-            <li>• Josefina Alonzo</li>
-
-          </ul>
-
-        </div>
-
-        <div class="bg-yellow-50 rounded-2xl p-6">
-
-          <h3 class="font-bold text-yellow-700 mb-3">
-
-            💡 Emprendimiento
-
-          </h3>
-
-          <ul class="space-y-2 text-sm md:text-base">
-
-            <li>• Divina</li>
-            <li>• Lourdes</li>
-            <li>• Juana Almonte</li>
-
-          </ul>
-
-        </div>
-
-        <div class="bg-purple-50 rounded-2xl p-6">
-
-          <h3 class="font-bold text-purple-700 mb-3">
-
-            🚀 Innovación e Impacto
-
-          </h3>
-
-          <ul class="space-y-2 text-sm md:text-base">
-
-            <li>• Gregorio</li>
-            <li>• Juana</li>
-            <li>• Frangel</li>
-            <li>• Secundina Duran</li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="bg-white rounded-3xl shadow-2xl p-5 md:p-8 fade-in">
-
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
-
         <h2 class="text-2xl md:text-3xl font-bold text-blue-700">
-
-          Agenda de Presentaciones
-
+          Agenda de Proyectos (16 Grupos)
         </h2>
-
         <input
           type="text"
           id="busqueda"
-          placeholder="Buscar proyecto..."
+          placeholder="Buscar proyecto o integrantes..."
           class="border p-3 rounded-2xl w-full lg:w-80 outline-none focus:ring-2 focus:ring-blue-400"
         >
-
       </div>
-
       <div 
         id="contenedorProyectos"
         class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
       ></div>
-
-    </section>
-
-    <section class="bg-gradient-to-r from-blue-700 to-indigo-700 rounded-3xl shadow-2xl p-6 md:p-10 mt-8 text-white fade-in">
-
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
-
-        Clausura
-
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-base md:text-lg">
-
-        <ul class="space-y-4">
-
-          <li>
-            🎤 Palabras de agradecimiento por el coordinator.
-          </li>
-
-          <li>
-            🗣️ Turno libre.
-          </li>
-
-        </ul>
-
-        <ul class="space-y-4">
-
-          <li>
-            📸 Foto grupal.
-          </li>
-
-          <li>
-            🥂 Brindis de cierre.
-          </li>
-
-        </ul>
-
-      </div>
-
     </section>
 
   </div>
 
 <script>
-
-// ARRAY DE PROYECTOS CON LA ASIGNACIÓN ESTRUCTURADA DE JURADOS POR CATEGORÍA
+// Base de datos de los 16 proyectos configurados estrictamente bajo la nueva Rúbrica de 25 puntos
 const proyectos = [
-
-  {
-    nombre: "CARLOTAS Y POSTRES",
-    participantes: "MILDRED Y CRISMEIDY",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "GALLO PLUS",
-    participantes: "ANGEL MANUEL Y BRAILIN",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "RINCONCITOS DE QUISQUEYA",
-    participantes: "ALEXA Y WILANI",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "MUSICBOX",
-    participantes: "RAYBELIS Y SUJEIDI",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "MARAND CAR",
-    participantes: "MARIEL Y ANDRES",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "NAILS YAILIN",
-    participantes: "MARIA DEL CARMEN",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "KEYSNOTE",
-    participantes: "WILDALYS",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "SALES",
-    participantes: "SAID GABRIEL Y LUIS ALFREDO",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "DIAZ CONSTRUCTION GROUP",
-    participantes: "JANNA CARLENE",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "LYNSPORT",
-    participantes: "WALI Y DERLIN ALFREDO",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "COMMUNITY KIDS",
-    participantes: "CHARMELYS E IRIS LEIDY",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "EASY RESERVE",
-    participantes: "ROBERCY Y ELIZABETH",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "HORSEPLUS",
-    participantes: "ALEXANDER Y ÁNGEL LUIS",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "AQUARIS NOVA",
-    participantes: "RANDY ANTONIO Y BRAILYN OLVEIRY",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "MAGIC JUNGLE",
-    participantes: "FANNY Y MARIANNY",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  },
-
-  {
-    nombre: "POWER PISTON",
-    participantes: "JUAN EMILIO Y JULIO ALBERTO",
-    jurados: {
-      tecnica: "Frangel, Candy, Luis, Candida Maria Peguero",
-      ortografia: "Nely, Josefina Alonzo",
-      emprendimiento: "Divina, Lourdes, Juana Almonte",
-      innovacion: "Gregorio, Juana, Frangel, Secundina Duran"
-    }
-  }
-
+  { nombre: "CARLOTAS Y POSTRES", participantes: "MILDRED Y CRISMEIDY", prefijo: "GP1" },
+  { nombre: "GALLO PLUS", participantes: "ANGEL MANUEL Y BRAILIN", prefijo: "GP2" },
+  { nombre: "RINCONCITOS DE QUISQUEYA", participantes: "ALEXA Y WILANI", prefijo: "GP3" },
+  { nombre: "MUSICBOX", participantes: "RAYBELIS Y SUJEIDI", prefijo: "GP4" },
+  { nombre: "MARAND CAR", participantes: "MARIEL Y ANDRES", prefijo: "GP5" },
+  { nombre: "NAILS YAILIN", participantes: "MARIA DEL CARMEN", prefijo: "GP6" },
+  { nombre: "KEYSNOTE", participantes: "WILDALYS", prefijo: "GP7" },
+  { nombre: "SALES", participantes: "SAID GABRIEL Y LUIS ALFREDO", prefijo: "GP8" },
+  { nombre: "DIAZ CONSTRUCTION GROUP", participantes: "JANNA CARLENE", prefijo: "GP9" },
+  { nombre: "LYNSPORT", participantes: "WALI Y DERLIN ALFREDO", prefijo: "GP10" },
+  { nombre: "COMMUNITY KIDS", participantes: "CHARMELYS E IRIS LEIDY", prefijo: "GP11" },
+  { nombre: "EASY RESERVE", participantes: "ROBERCY Y ELIZABETH", prefijo: "GP12" },
+  { nombre: "HORSEPLUS", participantes: "ALEXANDER Y ÁNGEL LUIS", prefijo: "GP13" },
+  { nombre: "AQUARIS NOVA", participantes: "RANDY ANTONIO Y BRAILYN OLVEIRY", prefijo: "GP14" },
+  { nombre: "MAGIC JUNGLE", participantes: "FANNY Y MARIANNY", prefijo: "GP15" },
+  { nombre: "POWER PISTON", participantes: "JUAN EMILIO Y JULIO ALBERTO", prefijo: "GP16" }
 ];
 
 const contenedor = document.getElementById("contenedorProyectos");
 const buscador = document.getElementById("busqueda");
 
 function mostrarProyectos(lista){
-
   contenedor.innerHTML = "";
-
-  lista.forEach((p, index) => {
-
+  lista.forEach((p) => {
     const nombreEscapado = p.nombre.replace(/'/g, "\\'");
     const participantesEscapados = p.participantes.replace(/'/g, "\\'");
-    
-    // Convertimos de forma segura el objeto de jurados a un string JSON válido para pasarlo por parámetro
-    const juradosJSON = JSON.stringify(p.jurados).replace(/'/g, "\\'");
+    const prefijoEscapado = p.prefijo.replace(/'/g, "\\'");
 
     contenedor.innerHTML += `
-
-      <div class="bg-slate-50 rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-1">
-
+      <div class="bg-slate-50 rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-1 border border-slate-200">
         <div class="flex justify-between items-center gap-3 mb-4 flex-wrap">
-
-          <span class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs md:text-sm">
-
-            Proyecto ${index + 1}
-
+          <span class="bg-blue-600 text-white px-4 py-1.2 rounded-xl text-xs font-bold">
+            ${p.prefijo}
           </span>
-
-          <span class="text-slate-500 text-xs md:text-sm">
-
-            ⏱️ 15 min
-
-          </span>
-
+          <span class="text-slate-500 text-xs md:text-sm">⏱️ 15 min</span>
         </div>
-
         <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-4 break-words">
-
           ${p.nombre}
-
         </h3>
-
         <p class="text-slate-600 mb-6 text-sm md:text-base">
-
-          👨‍💻 Presentado por:
-          <br>
-
+          👨‍💻 Presentado por:<br>
           <strong>${p.participantes}</strong>
-
         </p>
-
         <button
-          class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white p-3 rounded-2xl font-semibold transition"
-          onclick="mostrarDetalle('${nombreEscapado}', '${participantesEscapados}', '${juradosJSON}')"
+          class="w-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white p-3 rounded-2xl font-semibold transition shadow-md"
+          onclick="mostrarRubricaDetallada('${nombreEscapado}', '${participantesEscapados}', '${prefijoEscapado}')"
         >
-
-          Ver Detalles
-
+          Ver Rúbrica de Evaluación
         </button>
-
       </div>
-
     `;
-
   });
-
 }
 
-mostrarProyectos(proyectos);
+function registrarBuscador() {
+  buscador.addEventListener("keyup", () => {
+    const texto = buscador.value.toLowerCase();
+    const filtrados = proyectos.filter(p =>
+      p.nombre.toLowerCase().includes(texto) || 
+      p.participantes.toLowerCase().includes(texto) ||
+      p.prefijo.toLowerCase().includes(texto)
+    );
+    mostrarProyectos(filtrados);
+  });
+}
 
-buscador.addEventListener("keyup", () => {
-
-  const texto = buscador.value.toLowerCase();
-
-  const filtrados = proyectos.filter(p =>
-
-    p.nombre.toLowerCase().includes(texto)
-
-  );
-
-  mostrarProyectos(filtrados);
-
-});
-
-function mostrarDetalle(nombre, participantes, juradosStr){
-
-  // Reconstruimos el objeto original de jurados
-  const jurados = JSON.parse(juradosStr);
-
+function mostrarRubricaDetallada(nombre, participantes, grupo){
   alert(
-    "📊 DETALLES DEL PROYECTO\n" +
-    "-----------------------------------------\n" +
-    "📌 Proyecto: " + nombre + "\n" +
-    "👨‍💻 Integrantes: " + participantes + "\n" +
-    "⏱️ Duración: 15 minutos\n\n" +
-    "📋 JURADOS ASIGNADOS POR ÁREA:\n\n" +
-    "💻 PARTE TÉCNICA:\n" + jurados.tecnica.split(", ").map(j => "  • " + j).join("\n") + "\n\n" +
-    "✍️ ORTOGRAFÍA Y EXPRESIÓN:\n" + jurados.ortografia.split(", ").map(j => "  • " + j).join("\n") + "\n\n" +
-    "💡 EMPRENDIMIENTO:\n" + jurados.emprendimiento.split(", ").map(j => "  • " + j).join("\n") + "\n\n" +
-    "🚀 INNOVACIÓN E IMPACTO:\n" + jurados.innovacion.split(", ").map(j => "  • " + j).join("\n")
-  );
+    `📋 RÚBRICA OFICIAL DE EVALUACIÓN — ${grupo}\n` +
+    `----------------------------------------------------------------------\n` +
+    `📌 Proyecto: ${nombre}\n` +
+    `👨‍💻 Integrantes: ${participantes}\n` +
+    `----------------------------------------------------------------------\n\n` +
+    
+    `🛠️ 1. PARTE TÉCNICA (Jurados: Frangel Sosa, Cándida M. Peguero, Luis E. Guerrero) — Máx 9 Ptos\n` +
+    `  • Buenas prácticas de codificación:\n` +
+    `    - Utiliza nombres descriptivos para variables/funciones (1 Pto)\n` +
+    `    - Comenta el código de manera clara y concisa (1 Pto)\n` +
+    `    - Estructura el código de manera ordenada y legible (1 Pto)\n` +
+    `    - Omite código redundante o innecesario (1 Pto)\n` +
+    `    - Sigue los estándares de codificación (1 Pto)\n` +
+    `  • Funcionalidad y desempeño:\n` +
+    `    - El proyecto cumple con todos los requisitos funcionales (1 Pto)\n` +
+    `    - El software se ejecuta sin errores en tiempo real (1 Pto)\n` +
+    `    - La solución es eficiente y escalable (1 Pto)\n` +
+    `    - Maneja adecuadamente excepciones y errores (1 Pto)\n\n` +
 
+    `✍️ 2. ORTOGRAFÍA Y EXPRESIÓN (Jurados: Rosa María Reyes, Josefina Alonzo) — Máx 5 Ptos\n` +
+    `  • Utiliza lenguaje apropiado sin jerga técnica excesiva (1 Pto)\n` +
+    `  • Toma en cuenta signos de puntuación y reglas ortográficas (1 Pto)\n` +
+    `  • La redacción escrita es clara, coherente y sin ambigüedades (1 Pto)\n` +
+    `  • Se expresa verbalmente con fluidez y sin muletillas (1 Pto)\n` +
+    `  • Emplea un vocabulario variado y preciso acorde al contexto (1 Pto)\n\n` +
+
+    `💡 3. VISIÓN DE EMPRENDIMIENTO (Jurados: María Castillos, José Ángel Morillo) — Máx 5 Ptos\n` +
+    `  • Innovación y creatividad: Presenta una idea original y novedosa (1 Pto)\n` +
+    `  • Impacto social: Demuestra beneficio real o potencial en la comunidad (1 Pto)\n` +
+    `  • Viabilidad: El proyecto es factible y tiene proyección de ejecución (1 Pto)\n` +
+    `  • Escalabilidad: La propuesta puede crecer o adaptarse a mayor escala (1 Pto)\n` +
+    `  • Sostenibilidad: Considera aspectos económicos/ambientales/sociales (1 Pto)\n\n` +
+
+    `🚀 4. INNOVACIÓN E IMPACTO (Jurados: Gregorio Rojas Rosario, Juana R. Almonte) — Máx 6 Ptos\n` +
+    `  • Recurso multimedia: Incluye imágenes o videos relevantes (1 Pto)\n` +
+    `  • Utiliza efectos visuales adecuados en la presentación (1 Pto)\n` +
+    `  • Presentación oral: Presenta documentación técnica y de usuario (1 Pto)\n` +
+    `  • Habla de manera clara y perfectamente audible (1 Pto)\n` +
+    `  • Participación: Engancha al público, domina el tema y responde (1 Pto)\n` +
+    `  • Innovación técnica: Introduce elementos innovadores tecnológicos (1 Pto)\n\n` +
+    
+    `----------------------------------------------------------------------\n` +
+    `📊 PUNTAJE TOTAL MÁXIMO POSIBLE: 25 PUNTOS`
+  );
 }
 
+// Inicialización de la App
+mostrarProyectos(proyectos);
+registrarBuscador();
 </script>
 
 </body>
