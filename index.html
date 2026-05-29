@@ -336,14 +336,14 @@ function construirFilasCriterios(bloqueKey, contenedorId) {
         <p class="text-slate-700 font-medium max-w-lg leading-relaxed">${crit.desc}</p>
         
         <div class="flex items-center gap-1 shrink-0 self-end sm:self-center">
-          <button onclick="cambiarNota('${bloqueKey}', '${crit.id}', 0)" class="px-2 py-1 rounded-md font-bold transition border ${valor === 0 ? 'bg-red-500 text-white border-red-500':'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100'}">
-            Mal (0)
+          <button onclick="cambiarNota('${bloqueKey}', '${crit.id}', 0)" class="px-2.5 py-1 rounded-md font-bold transition border ${valor === 0 ? 'bg-red-500 text-white border-red-500':'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100'}">
+            Mal (0 pt)
           </button>
-          <button onclick="cambiarNota('${bloqueKey}', '${crit.id}', 0.5)" class="px-2 py-1 rounded-md font-bold transition border ${valor === 0.5 ? 'bg-amber-500 text-white border-amber-500':'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100'}">
-            Regular (0.5)
+          <button onclick="cambiarNota('${bloqueKey}', '${crit.id}', 0.5)" class="px-2.5 py-1 rounded-md font-bold transition border ${valor === 0.5 ? 'bg-amber-500 text-white border-amber-500':'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100'}">
+            Regular (0.5 pts)
           </button>
-          <button onclick="cambiarNota('${bloqueKey}', '${crit.id}', 1)" class="px-2 py-1 rounded-md font-bold transition border ${valor === 1 ? 'bg-green-500 text-white border-green-500':'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100'}">
-            Bien (1)
+          <button onclick="cambiarNota('${bloqueKey}', '${crit.id}', 1)" class="px-2.5 py-1 rounded-md font-bold transition border ${valor === 1 ? 'bg-green-500 text-white border-green-500':'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100'}">
+            Bien (1 pt)
           </button>
         </div>
       </div>
